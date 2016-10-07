@@ -8,6 +8,7 @@ package hungergames;
 import byui.cit260.hungerGames.model.Game;
 import byui.cit260.hungerGames.model.MainCharacter;
 import byui.cit260.hungerGames.model.Resource;
+import byui.cit260.hungerGames.model.Map;
 
 /**
  *
@@ -44,6 +45,9 @@ public class HungerGames {
         resourceOne.setMaxAmount(20);
         String resourceInfo = resourceOne.toString();
         System.out.println(resourceInfo);
+        
+        Map mapOne = newMap();
+        
     }
    
     //Here is a change   
