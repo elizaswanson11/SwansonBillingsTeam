@@ -7,6 +7,7 @@ package hungergames;
 
 import byui.cit260.hungerGames.model.Game;
 import byui.cit260.hungerGames.model.MainCharacter;
+import byui.cit260.hungerGames.model.Resource;
 
 /**
  *
@@ -35,6 +36,14 @@ public class HungerGames {
         mainCharacterOne.setMaxHealthLevel(20);
         String mainCharacterInfo = mainCharacterOne.toString();
         System.out.println(mainCharacterInfo);
+        
+        Resource resourceOne = new Resource();
+        
+        resourceOne.setDescription("This is a brief description.");
+        resourceOne.setHealthValue(13);
+        resourceOne.setMaxAmount(20);
+        String resourceInfo = resourceOne.toString();
+        System.out.println(resourceInfo);
     }
    
     //Here is a change   
