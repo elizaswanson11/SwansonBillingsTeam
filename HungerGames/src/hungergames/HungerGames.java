@@ -6,6 +6,7 @@
 package hungergames;
 
 import byui.cit260.hungerGames.model.Game;
+import byui.cit260.hungerGames.model.MainCharacter;
 
 /**
  *
@@ -23,6 +24,16 @@ public class HungerGames {
         gameOne.setNumberOfTributes(4);
         String gameInfo = gameOne.toString();
         System.out.println(gameInfo);
+        
+        MainCharacter mainCharacterOne = new MainCharacter();
+        
+        mainCharacterOne.setRebelPopularity(13);
+        mainCharacterOne.setCapitolPopularity(5);
+        mainCharacterOne.setHealthLevel(12);
+        mainCharacterOne.setMaxRebelPopularity(20);
+        mainCharacterOne.setCapitolPopularity(20);
+        mainCharacterOne.setMaxHealthLevel(20);
     }
+   
     //Here is a change   
 }
