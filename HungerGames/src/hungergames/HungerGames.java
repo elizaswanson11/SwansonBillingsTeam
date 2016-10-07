@@ -27,10 +27,10 @@ public class HungerGames {
         
         Location locationOne = new Location();
         
-        locationOne.setrow(2);
-        locationOne.setcolumn(4);
-        locationOne.setvisited(9);
-        locationOne.setamountRemaining(24);
+        locationOne.setRow(2);
+        locationOne.setColumn(4);
+        locationOne.setVisited(9);
+        locationOne.setAmountRemaining(24);
         String locationInfo = locationOne.toString();
         System.out.print(locationInfo);
     }
