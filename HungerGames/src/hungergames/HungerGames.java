@@ -6,6 +6,7 @@
 package hungergames;
 
 import byui.cit260.hungerGames.model.Game;
+import byui.cit260.hungerGames.model.Location;
 
 /**
  *
@@ -23,6 +24,15 @@ public class HungerGames {
         gameOne.setNumberOfTributes(4);
         String gameInfo = gameOne.toString();
         System.out.println(gameInfo);
+        
+        Location locationOne = new Location();
+        
+        locationOne.setrow(2);
+        locationOne.setcolumn(4);
+        locationOne.setvisited(9);
+        locationOne.setamountRemaining(24);
+        String locationInfo = locationOne.toString();
+        System.out.print(locationInfo);
     }
     //Here is a change   
 }
