@@ -33,6 +33,8 @@ public class HungerGames {
         mainCharacterOne.setMaxRebelPopularity(20);
         mainCharacterOne.setCapitolPopularity(20);
         mainCharacterOne.setMaxHealthLevel(20);
+        String mainCharacterInfo = mainCharacterOne.toString();
+        System.out.println(mainCharacterInfo);
     }
    
     //Here is a change   
