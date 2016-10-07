@@ -46,8 +46,12 @@ public class HungerGames {
         String resourceInfo = resourceOne.toString();
         System.out.println(resourceInfo);
         
-        Map mapOne = newMap();
+        Map mapOne = new Map();
         
+        mapOne.setColumnCount(2);
+        mapOne.setRowCount(2);
+        String mapInfo = mapOne.toString();
+        System.out.println(mapInfo);
     }
    
     //Here is a change   
