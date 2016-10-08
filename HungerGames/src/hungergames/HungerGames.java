@@ -11,6 +11,9 @@ import byui.cit260.hungerGames.model.Location;
 
 import byui.cit260.hungerGames.model.MainCharacter;
 
+import byui.cit260.hungerGames.model.Character;
+
+
 
 /**
  *
@@ -39,6 +42,7 @@ public class HungerGames {
         String locationInfo = locationOne.toString();
         System.out.print(locationInfo);
 
+        
         MainCharacter mainCharacterOne = new MainCharacter();
         
         mainCharacterOne.setRebelPopularity(13);
@@ -49,7 +53,15 @@ public class HungerGames {
         mainCharacterOne.setMaxHealthLevel(20);
         String mainCharacterInfo = mainCharacterOne.toString();
         System.out.println(mainCharacterInfo);
-
+        
+        
+        Character characterOne = new Character();
+        
+        characterOne.setName("Tommy");
+        characterOne.setCoordinantes(8);
+        characterOne.setSkillLevel(5.4);
+        String characterInfo = characterOne.toString();
+        System.out.println(characterInfo);
     }
    
     //Here is a change   
