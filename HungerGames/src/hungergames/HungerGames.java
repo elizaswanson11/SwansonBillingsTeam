@@ -6,16 +6,12 @@
 package hungergames;
 
 import byui.cit260.hungerGames.model.Game;
-
 import byui.cit260.hungerGames.model.Location;
-
 import byui.cit260.hungerGames.model.MainCharacter;
-
 import byui.cit260.hungerGames.model.Character;
-
 import byui.cit260.hungerGames.model.Scene;
-
-
+import byui.cit260.hungerGames.model.Resource;
+import byui.cit260.hungerGames.model.Map;
 
 /**
  *
@@ -73,6 +69,22 @@ public class HungerGames {
         sceneOne.setDisplaySymbol("T");
         String sceneInfo = sceneOne.toString();
         System.out.println(sceneInfo);
+
+        Resource resourceOne = new Resource();
+        
+        resourceOne.setDescription("This is a brief description.");
+        resourceOne.setHealthValue(13);
+        resourceOne.setMaxAmount(20);
+        String resourceInfo = resourceOne.toString();
+        System.out.println(resourceInfo);
+        
+        Map mapOne = new Map();
+        
+        mapOne.setColumnCount(2);
+        mapOne.setRowCount(2);
+        String mapInfo = mapOne.toString();
+        System.out.println(mapInfo);
+
     }
    
     //Here is a change   
