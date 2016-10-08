@@ -70,6 +70,7 @@ public class HungerGames {
         String sceneInfo = sceneOne.toString();
         System.out.println(sceneInfo);
 
+        
         Resource resourceOne = new Resource();
         
         resourceOne.setDescription("This is a brief description.");
@@ -77,6 +78,7 @@ public class HungerGames {
         resourceOne.setMaxAmount(20);
         String resourceInfo = resourceOne.toString();
         System.out.println(resourceInfo);
+        
         
         Map mapOne = new Map();
         
