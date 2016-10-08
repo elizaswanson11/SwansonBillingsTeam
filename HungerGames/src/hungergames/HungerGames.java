@@ -13,6 +13,7 @@ import byui.cit260.hungerGames.model.Scene;
 import byui.cit260.hungerGames.model.Resource;
 import byui.cit260.hungerGames.model.Map;
 import byui.cit260.hungerGames.model.Player;
+import byui.cit260.hungerGames.model.Bag;
 
 /**
  *
@@ -94,6 +95,14 @@ public class HungerGames {
         playerOne.setName("Susan");
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
+        
+        
+        Bag bagOne = new Bag();
+        
+        bagOne.setMaxResourceCount(15);
+        bagOne.setResourceCount(25);
+        String bagInfo = bagOne.toString();
+        System.out.println(bagInfo);
     }
    
     //Here is a change   
