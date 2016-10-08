@@ -14,6 +14,7 @@ import byui.cit260.hungerGames.model.Resource;
 import byui.cit260.hungerGames.model.Map;
 import byui.cit260.hungerGames.model.Player;
 import byui.cit260.hungerGames.model.Bag;
+import byui.cit260.hungerGames.model.OtherTribute;
 
 /**
  *
@@ -103,6 +104,13 @@ public class HungerGames {
         bagOne.setResourceCount(25);
         String bagInfo = bagOne.toString();
         System.out.println(bagInfo);
+        
+        
+        OtherTribute otherTributeOne = new OtherTribute();
+        
+        otherTributeOne.setDescription("This is a description of another tribute");
+        String otherTributeInfo = otherTributeOne.toString();
+        System.out.println(otherTributeInfo);
     }
    
     //Here is a change   
