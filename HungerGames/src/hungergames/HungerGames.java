@@ -13,6 +13,8 @@ import byui.cit260.hungerGames.model.MainCharacter;
 
 import byui.cit260.hungerGames.model.Character;
 
+import byui.cit260.hungerGames.model.Scene;
+
 
 
 /**
@@ -62,6 +64,15 @@ public class HungerGames {
         characterOne.setSkillLevel(5.4);
         String characterInfo = characterOne.toString();
         System.out.println(characterInfo);
+        
+        
+        Scene sceneOne = new Scene();
+        
+        sceneOne.setDescription("This is the forest.");
+        sceneOne.setTravelHealth(1.2);
+        sceneOne.setDisplaySymbol("T");
+        String sceneInfo = sceneOne.toString();
+        System.out.println(sceneInfo);
     }
    
     //Here is a change   
