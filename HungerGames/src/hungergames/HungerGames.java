@@ -12,6 +12,7 @@ import byui.cit260.hungerGames.model.Character;
 import byui.cit260.hungerGames.model.Scene;
 import byui.cit260.hungerGames.model.Resource;
 import byui.cit260.hungerGames.model.Map;
+import byui.cit260.hungerGames.model.Player;
 
 /**
  *
@@ -86,7 +87,13 @@ public class HungerGames {
         mapOne.setRowCount(2);
         String mapInfo = mapOne.toString();
         System.out.println(mapInfo);
-
+        
+        
+        Player playerOne = new Player();
+        
+        playerOne.setName("Susan");
+        String playerInfo = playerOne.toString();
+        System.out.println(playerInfo);
     }
    
     //Here is a change   
