@@ -15,6 +15,8 @@ import byui.cit260.hungerGames.model.Map;
 import byui.cit260.hungerGames.model.Player;
 import byui.cit260.hungerGames.model.Bag;
 import byui.cit260.hungerGames.model.OtherTribute;
+import byui.cit260.hungerGames.model.FightTypeScene;
+import byui.cit260.hungerGames.model.ResourceTypeScene;
 
 /**
  *
@@ -104,6 +106,21 @@ public class HungerGames {
         bagOne.setResourceCount(25);
         String bagInfo = bagOne.toString();
         System.out.println(bagInfo);
+        
+        FightTypeScene fightTypeSceneOne = new FightTypeScene();
+        
+        fightTypeSceneOne.setFightType(2);
+        String fightTypeSceneInfo = fightTypeSceneOne.toString();
+        System.out.println(fightTypeSceneInfo);
+        
+        ResourceTypeScene ResourceTypeSceneOne = new ResourceTypeScene();
+        
+        ResourceTypeSceneOne.setResourceType(1);
+        String ResourceTypeSceneInfo = ResourceTypeSceneOne.toString();
+        System.out.println(ResourceTypeSceneInfo);
+        
+        
+        
         
         
         OtherTribute otherTributeOne = new OtherTribute();
