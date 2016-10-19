@@ -10,5 +10,5 @@ package byui.cit260.hungerGames.control;
  * @author elizaswanson
  */
 public class PuzzleCalculation {
-    
+
 }
