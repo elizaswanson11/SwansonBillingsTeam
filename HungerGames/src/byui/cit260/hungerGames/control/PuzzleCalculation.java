@@ -5,28 +5,51 @@
  */
 package byui.cit260.hungerGames.control;
 
+import java.util.Random;
+
 /**
  *
  * @author elizaswanson
  */
 public class PuzzleCalculation {
-    /*calcResourceReward(capitolPopularity) {
+    /*calcCornucopiaReward(cornucopiaAnswer) {
     BEGIN
-    IF (capitolPopularity < 3 OR capitolPopularity > 15) THEN
-    RETURN -1
-    award = MathRand(1, 10)
-    resourceReward = award + (award * (capitolPopularity / 10))
-    RETURN resourceReward
+    IF (cornucopiaAnswer == FALSE) THEN
+    RETURN 11
+    ELSE {
+    percentageWin = Math.rand(1, 100)
+    IF (percentageWin <= 25 AND > 5) {
+            cornucopiaAward = (Math.rand(1, 4) * 2) * -1
+    }
+    ELSE IF (percentageWin <= 5){
+            cornucopiaAward = -15
+    }
+    ELSE {
+            cornucopiaAward = (Math.rand(1, 5) * 2) 
+    }
+    }
+    RETURN cornucopiaAward
     } */
-    public double calcResourceReward(double capitolPopularity) {
-        if (capitolPopularity < 3 || capitolPopularity > 15) {
-            return -1;
+
+    public double calcCornucopiaReward(boolean cornucopiaAnswer) {
+        Random random = new Random();
+        int cornucopiaAward;
+        if (cornucopiaAnswer == false) {
+            return 11;
         }
         else {
-            int award = (int)(Math.random() * 10 + 1);
-            double resourceReward = award + (award * (capitolPopularity / 10));
-            return resourceReward;
+            int percentageWin = random.nextInt(99) + 1;
+            if (percentageWin <= 25 && percentageWin > 5) {
+                cornucopiaAward = random.nextInt(3) + 1;
+            }
+            else if (percentageWin <= 5) {
+                cornucopiaAward = -15;
+            }
+            else {
+                cornucopiaAward = random.nextInt(4) + 1;
+            }
         }
+        return cornucopiaAward; 
     }
     
 
