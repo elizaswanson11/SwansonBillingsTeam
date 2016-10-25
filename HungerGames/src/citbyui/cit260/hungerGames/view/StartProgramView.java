@@ -22,20 +22,20 @@ public class StartProgramView {
 
     public void displayBanner() {
         System.out.println(
-        "/n**************************************************" +
-        "/n                                                  " +
-        "/n                 The Hunger Games.                " +
-        "/n This is a game of survival, not only physically  " +
-        "/n but socially as well. Your success in the Games  " +
-        "/n will be dependent on loyalty to our people, the  " +
-        "/n Rebel Alliance. What decisions will you make and " +
-        "/n where will these decisions take you? Let's begin " +
-        "/n and find out." +
-        "/n**************************************************"
+        "\n****************************************************" +
+        "\n*                                                  *" +
+        "\n*                 The Hunger Games.                *" +
+        "\n* This is a game of survival, not only physically  *" +
+        "\n* but socially as well. Your success in the Games  *" +
+        "\n* will be dependent on loyalty to our people, the  *" +
+        "\n* Rebel Alliance. What decisions will you make and *" +
+        "\n* where will these decisions take you? Let's begin *" +
+        "\n* and find out.                                    *" +
+        "\n****************************************************"
         );
     }
 
     public void displayStartProgramView() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("\n*** displayStartProgram() function called ***");
     }
 }
