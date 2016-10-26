@@ -31,6 +31,7 @@ public class StartProgramView {
         "\n* Rebel Alliance. What decisions will you make and *" +
         "\n* where will these decisions take you? Let's begin *" +
         "\n* and find out.                                    *" +
+        "\n*                                                  *" +
         "\n****************************************************"
         );
     }
