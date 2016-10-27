@@ -5,10 +5,16 @@
  */
 package byui.cit260.hungerGames.control;
 
+import byui.cit260.hungerGames.model.Player;
+
 /**
  *
  * @author elizaswanson
  */
 public class GameControl {
+
+    public static Player createPlayer(String playersName) {
+        System.out.println("\n*** createPlayer() was called ***");
+    }
     
 }
