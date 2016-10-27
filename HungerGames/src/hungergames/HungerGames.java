@@ -6,17 +6,7 @@
 package hungergames;
 
 import byui.cit260.hungerGames.model.Game;
-import byui.cit260.hungerGames.model.Location;
-import byui.cit260.hungerGames.model.MainCharacter;
-import byui.cit260.hungerGames.model.Character;
-import byui.cit260.hungerGames.model.Scene;
-import byui.cit260.hungerGames.model.Resource;
-import byui.cit260.hungerGames.model.Map;
 import byui.cit260.hungerGames.model.Player;
-import byui.cit260.hungerGames.model.Bag;
-import byui.cit260.hungerGames.model.OtherTribute;
-import byui.cit260.hungerGames.model.FightTypeScene;
-import byui.cit260.hungerGames.model.ResourceTypeScene;
 import citbyui.cit260.hungerGames.view.StartProgramView;
 
 /**
@@ -24,6 +14,11 @@ import citbyui.cit260.hungerGames.view.StartProgramView;
  * @author eliza
  */
 public class HungerGames {
+    
+    private static Game currentGame = null;
+    
+    private static Player player = null;
+    
 
     /**
      * @param args the command line arguments
@@ -33,5 +28,22 @@ public class HungerGames {
        startProgramView.displayStartProgramView();
     }
    
-    //Here is a change   
+
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        HungerGames.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        HungerGames.player = player;
+    }
+    
 }

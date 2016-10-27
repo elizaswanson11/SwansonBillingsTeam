@@ -6,6 +6,7 @@
 package byui.cit260.hungerGames.control;
 
 import byui.cit260.hungerGames.model.Player;
+import hungergames.HungerGames;
 
 /**
  *
@@ -13,8 +14,17 @@ import byui.cit260.hungerGames.model.Player;
  */
 public class GameControl {
 
-    public static Player createPlayer(String playersName) {
-        System.out.println("\n*** createPlayer() was called ***");
-    }
-    
+    public static Player createPlayer(String name) {
+        if (name == null) {
+            return null;
+        }
+        
+        Player player = new Player();
+        player.setName(name);
+        
+        HungerGames.setPlayer(player);
+        
+        return player;
+    } 
+ 
 }
