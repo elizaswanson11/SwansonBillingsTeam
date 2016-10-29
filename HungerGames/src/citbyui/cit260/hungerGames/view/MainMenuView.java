@@ -103,7 +103,8 @@ public class MainMenuView {
     }
 
     private void displayHelpMenu() {
-        System.out.println("*** displayHelpMenu function called ***");
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.displayHelpMenuView();
     }
 }
 
