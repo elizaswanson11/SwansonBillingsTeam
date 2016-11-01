@@ -87,11 +87,11 @@ public class GameMenuView {
     }
 
     private void displayCharacterStatistics() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("*** The displayCharacterStatistics() was called ***");
     }
 
     private void displayActionsMenu() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("*** The displayActionsMenu() was called ***");
     }
     
 }
