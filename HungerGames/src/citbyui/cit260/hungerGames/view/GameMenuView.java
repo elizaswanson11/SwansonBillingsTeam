@@ -96,7 +96,8 @@ public class GameMenuView {
     }
 
     private void displayActionsMenu() {
-        System.out.println("*** The displayActionsMenu() was called ***");
+        ActionMenuView actionMenuView = new ActionMenuView();
+        actionMenuView.displayActionMenuView();
     }
     
     private void doOpenRebellionBox() {
