@@ -98,26 +98,9 @@ public class GameMenuView {
     private void displayActionsMenu() {
         System.out.println("*** The displayActionsMenu() was called ***");
     }
-
-    private String promptMessage;
-    private Double rebellionPopularity;
-    private Double capitalPopularity;
     
     private void doOpenRebellionBox() {
-     
-        this.promptMessage = "\nWhat is your rebellion popularity level: ";
-        
-        Scanner keyboard = new Scanner(System.in);
-        
-        System.out.println("\n" + this.promptMessage);
-        rebellionPopularity = keyboard.nextDouble();
-
-        this.promptMessage = "\nWhat is your capital popularity level: ";
-        
-        System.out.println("\n" + this.promptMessage);
-        capitalPopularity = keyboard.nextDouble();
-        
-        PuzzleCalculation rebellionCalculation = new PuzzleCalculation();
-        rebellionCalculation.openRebellionBox(capitalPopularity, rebellionPopularity);
+        RebellionBoxView rebellionBoxView = new RebellionBoxView();
+        rebellionBoxView.displayRebellionBoxView();
     }
 }
