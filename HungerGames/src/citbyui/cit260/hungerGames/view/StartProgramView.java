@@ -62,7 +62,7 @@ public class StartProgramView {
     public void displayStartProgramView() {
         /*
         do
-            promt for and get playersName
+            prompt for and get playersName
             if playerName == 'Q' then
                 return
             do requested action and display next view

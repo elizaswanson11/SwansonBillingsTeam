@@ -1,5 +1,6 @@
 package citbyui.cit260.hungerGames.view;
 
+import byui.cit260.hungerGames.control.PuzzleCalculation;
 import java.util.Scanner;
 
 /*
@@ -35,6 +36,7 @@ public class GameMenuView {
               + "\nM - Display Map"
               + "\nC - Character Statistics"
               + "\nA - Actions"
+              + "\nR - Open Rebellion Box"
               + "\nQ - Quit"
               + "\n--------------------------------";
     }
@@ -74,6 +76,9 @@ public class GameMenuView {
             case "A":
                 this.displayActionsMenu();
                 break;
+            case "R":
+                this.doOpenRebellionBox();
+                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try Again");
                 break;
@@ -93,5 +98,26 @@ public class GameMenuView {
     private void displayActionsMenu() {
         System.out.println("*** The displayActionsMenu() was called ***");
     }
+
+    private String promptMessage;
+    private Double rebellionPopularity;
+    private Double capitalPopularity;
     
+    private void doOpenRebellionBox() {
+     
+        this.promptMessage = "\nWhat is your rebellion popularity level: ";
+        
+        Scanner keyboard = new Scanner(System.in);
+        
+        System.out.println("\n" + this.promptMessage);
+        rebellionPopularity = keyboard.nextDouble();
+
+        this.promptMessage = "\nWhat is your capital popularity level: ";
+        
+        System.out.println("\n" + this.promptMessage);
+        capitalPopularity = keyboard.nextDouble();
+        
+        PuzzleCalculation rebellionCalculation = new PuzzleCalculation();
+        rebellionCalculation.openRebellionBox(capitalPopularity, rebellionPopularity);
+    }
 }
