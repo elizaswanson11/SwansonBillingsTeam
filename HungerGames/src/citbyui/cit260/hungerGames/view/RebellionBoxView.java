@@ -53,22 +53,30 @@ public class RebellionBoxView {
     }
 
     private boolean doAction(String value) {
+        
         double rebellionPopularity = Double.parseDouble(value);
         
-        this.displayMessage = "\nWhat is your capital popularity level: ";
-        
-        String CPV = this.getValue();
-        
-        double capitalPopularity = Double.parseDouble(CPV);
-        
-        double result = PuzzleCalculation.openRebellionBox(capitalPopularity, rebellionPopularity);
-        if (result >= 0) {
-            System.out.println("The box has opened.");
-            return true;
-        }
-        else {
+        if (rebellionPopularity < 0) {
             System.out.println("Error. Invaild popularity value");
             return false;
+        }
+        else {
+            this.displayMessage = "\nWhat is your capital popularity level: ";
+        
+            String CPV = this.getValue();
+        
+            double capitalPopularity = Double.parseDouble(CPV);
+        
+            double result = PuzzleCalculation.openRebellionBox(capitalPopularity, rebellionPopularity);
+        
+            if (result >= 0) {
+                System.out.println("Congratulations your values were valid.");
+                return true;
+            }
+            else {
+                System.out.println("Error. Invaild popularity value");
+                return false;
+            }
         }
     }
         
