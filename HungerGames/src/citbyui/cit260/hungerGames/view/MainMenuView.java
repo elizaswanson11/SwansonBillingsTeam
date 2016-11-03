@@ -35,8 +35,7 @@ public class MainMenuView {
               + "\n--------------------------------"
               + "\nB - Begin new game"
               + "\nS - Save Game"
-              + "\nO - Open a saved game"
-              + "\nA - Action Menu" 
+              + "\nO - Open a saved game" 
               + "\nH - Help Menu" 
               + "\nQ - Quit"
               + "\n--------------------------------";
@@ -80,9 +79,6 @@ public class MainMenuView {
             case "H":
                 this.displayHelpMenu();
                 break;
-            case "A":
-                this.displayActionMenu();
-                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try Again");
                 break;
@@ -109,11 +105,6 @@ public class MainMenuView {
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.displayHelpMenuView();
-    }
-
-    private void displayActionMenu() {
-        ActionMenuView actionMenu = new ActionMenuView();
-        actionMenu.displayActionMenuView();
     }
 }
 
