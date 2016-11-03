@@ -60,24 +60,21 @@ public class CornucopiaView {
     
     private boolean doAction(String value) {
         value = value.toUpperCase();
-        
-        switch (value) {
-            case "A": 
-                this.calcCornucopiaReward();
-                return true;
-            case "B":
-                System.out.println("\nYou have avoided the bloodbath. "
-                + "You have sustained no injuries, but have gained no rewards.");
-                return true;
-            default:
-                System.out.println("\n*** Invalid selection *** Try Again");
-                break;
+        String compareValue = "A";
+        String compareSecondValue = "B";
+       
+        if (value.equals(compareValue)) {
+            int reward = PuzzleCalculation.calcCornucopiaReward();
+            System.out.println("Your reward is " + reward + ".");
+        }
+        else if (value.equals(compareSecondValue)) {
+            System.out.println("You have avoided the bloodbath. You have incurred no injuries but earned no reward.");
+        }
+        else  {
+            System.out.println("Invalid value. Please enter a valid value.");
+            return false;
         }
         
-        return false;
-    }
-
-    private void calcCornucopiaReward() {
-       System.out.println("\n*** calcCornucopiaReward stub function called ***");
+        return true;
     }
 }

@@ -32,7 +32,7 @@ public class PuzzleCalculation {
     RETURN cornucopiaAward
     } */
 
-    public double calcCornucopiaReward() {
+    public static int calcCornucopiaReward() {
         Random random = new Random();
         int cornucopiaAward;
         int percentageWin = random.nextInt(99) + 1;
@@ -45,7 +45,8 @@ public class PuzzleCalculation {
         else {
             cornucopiaAward = random.nextInt(4) + 1;
         }
-        return cornucopiaAward; 
+        return cornucopiaAward;
+        
     }
     
 
