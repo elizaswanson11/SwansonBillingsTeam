@@ -37,6 +37,7 @@ public class MainMenuView {
               + "\nS - Save Game"
               + "\nO - Open a saved game" 
               + "\nH - Help Menu" 
+              + "\nC - Cornucopia View" 
               + "\nQ - Quit"
               + "\n--------------------------------";
     }
@@ -79,6 +80,9 @@ public class MainMenuView {
             case "H":
                 this.displayHelpMenu();
                 break;
+            case "C":
+                this.displayCornucopiaView();
+                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try Again");
                 break;
@@ -105,6 +109,10 @@ public class MainMenuView {
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.displayHelpMenuView();
+    }
+    private void displayCornucopiaView() {
+        CornucopiaView cornucopiaView = new CornucopiaView();
+        cornucopiaView.displayCornucopiaView();
     }
 }
 
