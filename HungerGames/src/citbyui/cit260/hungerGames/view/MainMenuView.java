@@ -38,6 +38,7 @@ public class MainMenuView {
               + "\nO - Open a saved game"
               + "\nA - Action Menu" 
               + "\nH - Help Menu" 
+              + "\nC - Cornucopia View" 
               + "\nQ - Quit"
               + "\n--------------------------------";
     }
@@ -83,6 +84,9 @@ public class MainMenuView {
             case "A":
                 this.displayActionMenu();
                 break;
+            case "C":
+                this.displayCornucopiaView();
+                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try Again");
                 break;
@@ -114,6 +118,10 @@ public class MainMenuView {
     private void displayActionMenu() {
         ActionMenuView actionMenu = new ActionMenuView();
         actionMenu.displayActionMenuView();
+    }
+    private void displayCornucopiaView() {
+        CornucopiaView cornucopiaView = new CornucopiaView();
+        cornucopiaView.displayCornucopiaView();
     }
 }
 

@@ -30,14 +30,14 @@ public class PuzzleCalculationTest {
         PuzzleCalculation instance = new PuzzleCalculation();
         int minResult = -15;
         int maxResult = 10;
-        double result = instance.calcCornucopiaReward(cornucopiaAnswer);
+        double result = instance.calcCornucopiaReward();
         assertTrue(result >= minResult && result <= maxResult);
         
         System.out.println("Test Case 2");
         cornucopiaAnswer = false;
         instance = new PuzzleCalculation();
         int expResult = 11;
-        result = instance.calcCornucopiaReward(cornucopiaAnswer);
+        result = instance.calcCornucopiaReward();
         assertEquals(expResult, result, 0.0);
     }
     

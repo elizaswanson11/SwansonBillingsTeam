@@ -32,23 +32,18 @@ public class PuzzleCalculation {
     RETURN cornucopiaAward
     } */
 
-    public double calcCornucopiaReward(boolean cornucopiaAnswer) {
+    public double calcCornucopiaReward() {
         Random random = new Random();
         int cornucopiaAward;
-        if (cornucopiaAnswer == false) {
-            return 11;
+        int percentageWin = random.nextInt(99) + 1;
+        if (percentageWin <= 25 && percentageWin > 5) {
+            cornucopiaAward = random.nextInt(3) + 1;
+        }
+        else if (percentageWin <= 5) {
+            cornucopiaAward = -15;
         }
         else {
-            int percentageWin = random.nextInt(99) + 1;
-            if (percentageWin <= 25 && percentageWin > 5) {
-                cornucopiaAward = random.nextInt(3) + 1;
-            }
-            else if (percentageWin <= 5) {
-                cornucopiaAward = -15;
-            }
-            else {
-                cornucopiaAward = random.nextInt(4) + 1;
-            }
+            cornucopiaAward = random.nextInt(4) + 1;
         }
         return cornucopiaAward; 
     }
