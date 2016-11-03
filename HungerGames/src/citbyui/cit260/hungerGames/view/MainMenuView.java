@@ -99,7 +99,7 @@ public class MainMenuView {
         GameControl.createNewGame(HungerGames.getPlayer());
         
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.displayGameMenuView();
     }
 
     private void saveGame() {

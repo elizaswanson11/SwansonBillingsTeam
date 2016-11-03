@@ -50,7 +50,7 @@ public class PuzzleCalculation {
     
 
 
-    public double openRebellionBox(double capitolPopularity, double rebellionPopularity) {
+    public static double openRebellionBox(double capitolPopularity, double rebellionPopularity) {
     //double openRebellionBox(double capitolPopularity, double rebellionPopularity) {
     //BEGIN
     //IF (capitolPopularity < 0 OR capitolPopularity > 15) THEN
