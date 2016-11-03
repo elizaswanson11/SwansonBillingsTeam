@@ -35,8 +35,7 @@ public class MainMenuView {
               + "\n--------------------------------"
               + "\nB - Begin new game"
               + "\nS - Save Game"
-              + "\nO - Open a saved game"
-              + "\nA - Action Menu" 
+              + "\nO - Open a saved game" 
               + "\nH - Help Menu" 
               + "\nC - Cornucopia View"
               + "\nD - Dummy View"  
@@ -82,9 +81,6 @@ public class MainMenuView {
             case "H":
                 this.displayHelpMenu();
                 break;
-            case "A":
-                this.displayActionMenu();
-                break;
             case "C":
                 this.displayCornucopiaView();
                 break;
@@ -117,11 +113,6 @@ public class MainMenuView {
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.displayHelpMenuView();
-    }
-
-    private void displayActionMenu() {
-        ActionMenuView actionMenu = new ActionMenuView();
-        actionMenu.displayActionMenuView();
     }
     private void displayCornucopiaView() {
         CornucopiaView cornucopiaView = new CornucopiaView();
