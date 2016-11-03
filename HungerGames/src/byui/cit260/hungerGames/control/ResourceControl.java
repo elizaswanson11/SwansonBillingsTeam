@@ -28,4 +28,15 @@ public class ResourceControl {
             return resourceReward;
         }
     }
+    public static int dummyControl(int resourceValue) {
+        if (resourceValue > 10) {
+            return 1;
+        }
+        else if(resourceValue == 10) {
+            return 0;
+        }
+        else {
+            return -1;
+        }
+}
 }
