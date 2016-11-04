@@ -30,9 +30,12 @@ public class ResourceControl {
     }
     public static int dummyControl(int resourceValue) {
         if (resourceValue > 10) {
-            return 1;
+            return 2;
         }
         else if(resourceValue == 10) {
+            return 1;
+        }
+        else if (resourceValue < 10) {
             return 0;
         }
         else {
