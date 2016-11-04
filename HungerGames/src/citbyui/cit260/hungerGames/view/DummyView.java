@@ -55,14 +55,17 @@ public class DummyView {
     private boolean doAction(String value) {
         int resourceValue = Integer.parseInt(value);
         int returnValue = ResourceControl.dummyControl(resourceValue);
-        if (returnValue == 1) {
+        if (returnValue == 2) {
             System.out.println("Your number is greater than 10.");
         }
-        else if (returnValue == 0) {
+        else if (returnValue == 1) {
             System.out.println("Your number is equal to 10.");
         }
-        else {
+        else if (returnValue == 0) {
             System.out.println("Your number is less than 10.");
+        }
+        else {
+            System.out.println("Invalid value entered. Please enter a valid value.");
         }
         return true;
     }   
