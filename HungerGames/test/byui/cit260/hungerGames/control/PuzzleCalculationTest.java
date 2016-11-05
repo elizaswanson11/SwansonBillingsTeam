@@ -26,19 +26,12 @@ public class PuzzleCalculationTest {
         System.out.println("calcCornucopiaReward");
         
         System.out.println("Test Case 1");
-        boolean cornucopiaAnswer = true;
         PuzzleCalculation instance = new PuzzleCalculation();
         int minResult = -15;
         int maxResult = 10;
         double result = instance.calcCornucopiaReward();
         assertTrue(result >= minResult && result <= maxResult);
         
-        System.out.println("Test Case 2");
-        cornucopiaAnswer = false;
-        instance = new PuzzleCalculation();
-        int expResult = 11;
-        result = instance.calcCornucopiaReward();
-        assertEquals(expResult, result, 0.0);
     }
     
 
@@ -49,6 +42,8 @@ public class PuzzleCalculationTest {
      */
     @Test
     public void testOpenRebellionBox() {
+        System.out.println("testOpenRebellionBox");
+        
         System.out.println("Test Case 1");
         double capitolPopularity = 10;
         double rebellionPopularity = 4;
