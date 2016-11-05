@@ -48,8 +48,6 @@ public class PuzzleCalculation {
         return cornucopiaAward;
         
     }
-    
-
 
     public static double openRebellionBox(double capitolPopularity, double rebellionPopularity) {
     //double openRebellionBox(double capitolPopularity, double rebellionPopularity) {
