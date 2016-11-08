@@ -1,8 +1,5 @@
 package citbyui.cit260.hungerGames.view;
 
-import byui.cit260.hungerGames.control.PuzzleCalculation;
-import java.util.Scanner;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -13,23 +10,12 @@ import java.util.Scanner;
  *
  * @author eliza
  */
-public class GameMenuView {
-    
+public class GameMenuView extends View{
+
     private String menu;
 
-    void displayGameMenuView() {
-        boolean done = false;
-        do {
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(menuOption);
-        } while (!done);
-    }
-    
     public GameMenuView() {
-        this.menu = "\n"
+        super("\n"
               + "\n--------------------------------"
               + "\n| Game Menu                    |"
               + "\n--------------------------------"
@@ -38,32 +24,11 @@ public class GameMenuView {
               + "\nA - Actions"
               + "\nR - Open Rebellion Box"
               + "\nQ - Quit"
-              + "\n--------------------------------";
-    }
-    
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-    
-            while (!valid) {
-                System.out.println("\n" + this.menu);
-        
-                value = keyboard.nextLine();
-                value = value.trim();
-        
-            if (value.length() < 1) {
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-        
-            break;
-        }
-    
-        return value;
+              + "\n--------------------------------");
     }
 
-    private boolean doAction(String value) {
+    @Override
+    public boolean doAction(String value) {
         value = value.toUpperCase();
         
         switch (value) {
@@ -97,7 +62,7 @@ public class GameMenuView {
 
     private void displayActionsMenu() {
         ActionMenuView actionMenuView = new ActionMenuView();
-        actionMenuView.displayActionMenuView();
+        actionMenuView.display();
     }
     
     private void doOpenRebellionBox() {

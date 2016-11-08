@@ -6,53 +6,19 @@
 package citbyui.cit260.hungerGames.view;
 
 import byui.cit260.hungerGames.control.ResourceControl;
-import java.util.Scanner;
 
 /**
  *
  * @author elizaswanson
  */
-public class DummyView {
-    private String displayMessage;
-
-    void displayDummyView() {
-        boolean done = false;
-        do {
-            String value = this.getValue();
-            if (value.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(value);
-        } while (!done);
-    }
+public class DummyView extends View {
 
     public DummyView() {
-        this.displayMessage = "Enter in the number of resources you want.";
+        super("Enter in the number of resources you want.");
     }
 
-    private String getValue() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-    
-            while (!valid) {
-                System.out.println("\n" + this.displayMessage);
-        
-                value = keyboard.nextLine();
-                value = value.trim();
-        
-            if (value.length() < 1) {
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-        
-            break;
-        }
-    
-        return value;
-    }
-    
-    private boolean doAction(String value) {
+    @Override
+    public boolean doAction(String value) {
         int resourceValue = Integer.parseInt(value);
         int returnValue = ResourceControl.dummyControl(resourceValue);
         if (returnValue == 2) {
