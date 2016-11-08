@@ -5,7 +5,6 @@
  */
 package citbyui.cit260.hungerGames.view;
 
-import java.util.Scanner;
 import byui.cit260.hungerGames.control.GameControl;
 import hungergames.HungerGames;
 /**
@@ -64,7 +63,7 @@ public class MainMenuView extends View {
         GameControl.createNewGame(HungerGames.getPlayer());
         
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenuView();
+        gameMenu.display();
     }
 
     private void saveGame() {
@@ -81,12 +80,12 @@ public class MainMenuView extends View {
     }
     private void displayCornucopiaView() {
         CornucopiaView cornucopiaView = new CornucopiaView();
-        cornucopiaView.displayCornucopiaView();
+        cornucopiaView.display();
     }
 
     private void displayDummyView() {
         DummyView dummyView = new DummyView();
-        dummyView.displayDummyView();
+        dummyView.display();
     }
 }
 
