@@ -67,6 +67,6 @@ public class GameMenuView extends View{
     
     private void doOpenRebellionBox() {
         RebellionBoxView rebellionBoxView = new RebellionBoxView();
-        rebellionBoxView.displayRebellionBoxView();
+        rebellionBoxView.display();
     }
 }
