@@ -79,5 +79,22 @@ public class PuzzleCalculation {
             return 0;
         }
     }
+    
+    public static double compareTraining(Integer number) {
+        Random random = new Random();
+        Integer numberTwo = random.nextInt(8) + 1;
+        
+        if(number < 0 || number > 9) {
+            return -1;
+        }
+        else {
+            if (number == numberTwo) {
+                return 1;
+            }
+            else {
+                return 0;
+            }
+        }
+    }
 
 }
