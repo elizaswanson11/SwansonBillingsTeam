@@ -37,7 +37,7 @@ public class ActionMenuView extends View{
                 this.askForResources();
                 break;
             case "U":
-                this.useResources();
+                this.checkForResources();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try Again");
@@ -55,7 +55,8 @@ public class ActionMenuView extends View{
         System.out.println("\n*** askForResources stub function called ***");
     }
 
-    private void useResources() {
-       System.out.println("\n*** useResources stub function called ***");
+    private void checkForResources() {
+       CheckForResourcesView checkForResourcesView = new CheckForResourcesView();
+       checkForResourcesView.display();
     }
 }
