@@ -5,8 +5,6 @@
  */
 package citbyui.cit260.hungerGames.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author elizaswanson
