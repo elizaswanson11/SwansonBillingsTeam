@@ -46,7 +46,8 @@ public class HelpMenuView extends View{
     }   
 
     private void viewAboutPopularity() {
-        System.out.println("\n*** viewAboutPopularity stub function called ***");
+        System.out.println("\n*** viewAoutPopularity stub function called ***");
+
     }
 
     private void viewGameObjectives() {
@@ -54,6 +55,21 @@ public class HelpMenuView extends View{
     }
 
     private void viewMoveCharacter() {
-        System.out.println("\n*** wiewMoveCharacter stub function called ***");
+        System.out.println(
+                  "\n******************************************************************"
+                + "\nMoving [How to move character]: To move your character, you will "
+                + "\nneed to choose the map. You will receive a message of “Where do you want to "
+                + "\ngo?” followed by a view of the map. You will then be able to choose"
+                + "\nany location on the map to travel to. There is no limit on how many "
+                + "\nspaces you can move from their certain location, but every change in "
+                + "\nlocation will take up some heath points. (as the character had to put effort into "
+                + "\nhealth loss for each distance calculation the character moves). To choose "
+                + "\na new location, you will enter coordinates (like “9” and “5”) and the"
+                + "\ncomputer will search for that pre-programed location in the area. After the "
+                + "\nlocation is chosen, you will receive this type of message: “You are "
+                + "\nnow in ‘______’ and you used up ‘______’ health level points to get here.” "
+                + "\nThis message will be followed with any necessary information about the "
+                + "\nlocation you needs to know. If you enter an invalid number, you must try again. "
+                + "\n******************************************************************");
     }
 }
