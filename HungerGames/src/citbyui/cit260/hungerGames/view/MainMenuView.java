@@ -23,7 +23,8 @@ public class MainMenuView extends View {
               + "\nO - Open a saved game" 
               + "\nH - Help Menu" 
               + "\nC - Cornucopia View"
-              + "\nD - Dummy View"  
+              + "\nD - Dummy View" 
+              + "\nT - Training View"
               + "\nQ - Quit"
               + "\n--------------------------------");
     }
@@ -51,6 +52,9 @@ public class MainMenuView extends View {
             case "D":
                 this.displayDummyView();
                 break;
+            case "T":
+                this.displayPracticeTrainingView();
+                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try Again");
                 break;
@@ -76,7 +80,7 @@ public class MainMenuView extends View {
 
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenuView();
+        helpMenu.display();
     }
     private void displayCornucopiaView() {
         CornucopiaView cornucopiaView = new CornucopiaView();
@@ -86,6 +90,11 @@ public class MainMenuView extends View {
     private void displayDummyView() {
         DummyView dummyView = new DummyView();
         dummyView.display();
+    }
+    
+    private void displayPracticeTrainingView() {
+        PracticeTrainingView practiceTrainingView = new PracticeTrainingView();
+        practiceTrainingView.display();
     }
 }
 
