@@ -12,7 +12,9 @@ import java.util.Objects;
  */
 public class Player implements Serializable {
     private String name;
-
+    
+    
+    
     public Player() {
     }
 

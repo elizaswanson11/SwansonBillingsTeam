@@ -12,7 +12,7 @@ import java.io.Serializable;
 public class Bag implements Serializable{
     private double maxResourceCount;
     private double resourceCount;
-
+    
     public Bag() {
     }
 

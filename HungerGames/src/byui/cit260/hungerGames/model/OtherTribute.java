@@ -10,7 +10,7 @@ import java.util.Objects;
  *
  * @author eliza
  */
-public class OtherTribute implements Serializable{
+public class OtherTribute extends Character implements Serializable{
     private String description;
 
     public OtherTribute() {

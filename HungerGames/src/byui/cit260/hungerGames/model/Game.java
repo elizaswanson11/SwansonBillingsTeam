@@ -12,6 +12,36 @@ import java.io.Serializable;
 public class Game implements Serializable{
     private double numberPeople;
     private double numberOfTributes;
+    
+    private Character[] character;
+
+    public Character[] getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character[] character) {
+        this.character = character;
+    }
+    
+    private Map map;
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+    
+    private Player player;
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
 
     public double getNumberPeople() {
         return numberPeople;

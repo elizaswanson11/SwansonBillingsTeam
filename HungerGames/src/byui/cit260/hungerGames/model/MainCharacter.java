@@ -9,7 +9,7 @@ import java.io.Serializable;
  *
  * @author elizaswanson
  */
-public class MainCharacter implements Serializable{
+public class MainCharacter extends Character implements Serializable {
     private double rebelPopularity;
     private double capitolPopularity;
     private double healthLevel;

@@ -16,6 +16,16 @@ public class Character implements Serializable{
     private double coordinantes;
     private double skillLevel;
 
+    private Bag bag;    
+
+    public Bag getBag() {
+        return bag;
+    }
+
+    public void setBag(Bag bag) {
+        this.bag = bag;
+    }
+    
     public Character() {
     }
 
