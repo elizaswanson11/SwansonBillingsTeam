@@ -12,6 +12,15 @@ import java.io.Serializable;
 public class Bag implements Serializable{
     private double maxResourceCount;
     private double resourceCount;
+    private Resource[] resources;
+
+    public Resource[] getResources() {
+        return resources;
+    }
+
+    public void setResources(Resource[] resources) {
+        this.resources = resources;
+    }
     
     public Bag() {
     }
