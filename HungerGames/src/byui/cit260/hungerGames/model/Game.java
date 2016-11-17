@@ -11,10 +11,12 @@ import java.io.Serializable;
  */
 public class Game implements Serializable{
     private double numberPeople;
-    private double numberOfTributes;
+    private double numberOfTributes; 
     
+    private Player player;
     private Character[] character;
-
+    private Map map;
+    
     public Character[] getCharacter() {
         return character;
     }
@@ -22,8 +24,6 @@ public class Game implements Serializable{
     public void setCharacter(Character[] character) {
         this.character = character;
     }
-    
-    private Map map;
 
     public Map getMap() {
         return map;
@@ -32,8 +32,6 @@ public class Game implements Serializable{
     public void setMap(Map map) {
         this.map = map;
     }
-    
-    private Player player;
 
     public Player getPlayer() {
         return player;
@@ -94,6 +92,10 @@ public class Game implements Serializable{
     @Override
     public String toString() {
         return "Game{" + "numberPeople=" + numberPeople + ", numberOfTributes=" + numberOfTributes + '}';
+    }
+
+    public void setCharacter(java.lang.Character[] character) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

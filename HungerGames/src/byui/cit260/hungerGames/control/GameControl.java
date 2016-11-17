@@ -5,6 +5,8 @@
  */
 package byui.cit260.hungerGames.control;
 
+import byui.cit260.hungerGames.model.Game;
+import byui.cit260.hungerGames.model.Map;
 import byui.cit260.hungerGames.model.Player;
 import hungergames.HungerGames;
 
@@ -28,7 +30,24 @@ public class GameControl {
     } 
 
     public static void createNewGame(Player player) {
-        System.out.println("\n*** createNewGame stub function called ***");
+        
+        Game game = new Game();
+        HungerGames.setCurrentGame(game);
+        
+        game.setPlayer(player);
+        
+        Character[] character = GameControl.createCharacter();
+        game.setCharacter(character);
+        
+        Map map = MapControl.createMap();
+        game.setMap(map);
+        
+        MapControl.moveActorsToStartPosition(map);
+    }
+
+    private static Character[] createCharacter() {
+        System.out.println("*** createCharacter stub function called in GameControl ***");
+        return null;
     }
  
 }
