@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.hungerGames.control;
+import byui.cit260.hungerGames.model.Resource;
 
 /**
  *
@@ -41,5 +42,13 @@ public class ResourceControl {
         else {
             return -1;
         }
-}
+    }
+    public static Resource[] createResourceList() {
+        //Eliza this is the code to create a new Resource List for the Bag.
+        //I created the variable to hold the array for the resource list in the Bag class of the Model Layer.
+        //Maybe ask Brother Jackson how to place items from an enum list into an array.
+        Resource[] resource = new Resource[2];
+        
+        return resource;
+    }
 }
