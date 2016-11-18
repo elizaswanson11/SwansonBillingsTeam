@@ -8,6 +8,7 @@ package byui.cit260.hungerGames.control;
 import byui.cit260.hungerGames.model.Game;
 import byui.cit260.hungerGames.model.Map;
 import byui.cit260.hungerGames.model.Player;
+import byui.cit260.hungerGames.model.Scene;
 import hungergames.HungerGames;
 
 /**
@@ -48,6 +49,10 @@ public class GameControl {
     private static Character[] createCharacter() {
         System.out.println("*** createCharacter stub function called in GameControl ***");
         return null;
+    }
+
+    public static void assignScenesToLocations(Map map, Scene[] scenes) {
+        System.out.println("*** assignScenesToLocations stub function called in GameControl ***");
     }
  
 }
