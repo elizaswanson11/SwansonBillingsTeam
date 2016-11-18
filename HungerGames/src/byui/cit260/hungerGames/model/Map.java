@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package byui.cit260.hungerGames.model;
-import byui.cit260.hungerGames.control.GameControl;
 import java.io.Serializable;
 /**
  *
