@@ -5,6 +5,7 @@
  */
 package byui.cit260.hungerGames.model;
 import java.io.Serializable;
+import byui.cit260.hungerGames.model.Character;
 /**
  *
  * @author elizaswanson
@@ -14,15 +15,15 @@ public class Game implements Serializable{
     private double numberOfTributes; 
     
     private Player player;
-    private Character[] character;
+    private Character[] characters;
     private Map map;
     
-    public Character[] getCharacter() {
-        return character;
+    public Character[] getCharacters() {
+        return characters;
     }
 
-    public void setCharacter(Character[] character) {
-        this.character = character;
+    public void setCharacters(Character[] characters) {
+        this.characters = characters;
     }
 
     public Map getMap() {
@@ -93,10 +94,4 @@ public class Game implements Serializable{
     public String toString() {
         return "Game{" + "numberPeople=" + numberPeople + ", numberOfTributes=" + numberOfTributes + '}';
     }
-
-    public void setCharacter(java.lang.Character[] character) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
 }

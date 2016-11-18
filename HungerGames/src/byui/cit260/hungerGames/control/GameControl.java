@@ -8,6 +8,8 @@ package byui.cit260.hungerGames.control;
 import byui.cit260.hungerGames.model.Game;
 import byui.cit260.hungerGames.model.Map;
 import byui.cit260.hungerGames.model.Player;
+import byui.cit260.hungerGames.model.Character;
+import byui.cit260.hungerGames.model.Scene;
 import hungergames.HungerGames;
 
 /**
@@ -36,18 +38,39 @@ public class GameControl {
         
         game.setPlayer(player);
         
-        Character[] character = GameControl.createCharacter();
-        game.setCharacter(character);
+        Character[] characters = GameControl.createCharacter();
+        game.setCharacters(characters);
         
         Map map = MapControl.createMap();
         game.setMap(map);
         
-        MapControl.moveActorsToStartPosition(map);
+        MapControl.moveCharactersToStartPosition(map);
     }
 
     private static Character[] createCharacter() {
         System.out.println("*** createCharacter stub function called in GameControl ***");
         return null;
     }
- 
+    
+    public static Scene[] createScenes() {
+        Scene[] scenes = new Scene[Scene.SceneType.values().length];
+        
+        Scene fightScene = new Scene();
+        fightScene.setDescription(
+            "You have encounted another tribute and now you are going to fight. Hope you survive!");
+        scenes[Scene.SceneType.fight.ordinal()] = fightScene;
+        
+        Scene resourceScene = new Scene();
+        resourceScene.setDescription(
+            "You've come accross some resources you know you can use. Begin collecting now.");
+        scenes[Scene.SceneType.resource.ordinal()] = resourceScene;
+        
+        Scene interviewScene = new Scene();
+        interviewScene.setDescription(
+            "Welcome to the interview. You will be asked some questions. " +
+            "Please answer as honestly as possible.");
+        scenes[Scene.SceneType.interview.ordinal()] = interviewScene;
+        
+        return scenes;
+    }
 }

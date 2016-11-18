@@ -5,7 +5,9 @@
  */
 package byui.cit260.hungerGames.control;
 
+import byui.cit260.hungerGames.model.Location;
 import byui.cit260.hungerGames.model.Map;
+import byui.cit260.hungerGames.model.Scene;
 
 /**
  *
@@ -21,8 +23,13 @@ public class MapControl {
         return map;
     }
 
-    static void moveActorsToStartPosition(Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    static void moveCharactersToStartPosition(Map map) {
+       System.out.println("*** moveCharactersToStartPosition() called ***");
     }
     
+    public static void assignScenesToLocations(Map map, Scene[] scenes) {
+        //Location[][] locations = map.getLocations();
+        
+        
+    }
 }

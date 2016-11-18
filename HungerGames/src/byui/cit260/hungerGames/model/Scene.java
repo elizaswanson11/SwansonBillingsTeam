@@ -14,10 +14,15 @@ public class Scene implements Serializable{
     private String description;
     private double travelHealth;
     private String displaySymbol;
-
+    public enum SceneType {
+        fight,
+        resource,
+        interview;
+    }
+    
     public Scene() {
     }
-
+    
     public String getDescription() {
         return description;
     }
