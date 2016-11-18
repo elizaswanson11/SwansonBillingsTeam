@@ -73,4 +73,8 @@ public class GameControl {
         
         return scenes;
     }
+    
+    public static void assignScenesToLocations(Map map, Scene[] scenes) {
+        System.out.println("*** assignScenesToLocations stub function called in GameControl ***");
+    }
 }
