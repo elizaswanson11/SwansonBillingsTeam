@@ -5,6 +5,7 @@
  */
 package byui.cit260.hungerGames.model;
 import java.io.Serializable;
+import java.util.ArrayList;
 /**
  *
  * @author eliza
@@ -12,6 +13,15 @@ import java.io.Serializable;
 public class Bag implements Serializable{
     private double maxResourceCount;
     private double resourceCount;
+    private ArrayList<Resource> resources = new ArrayList<>();
+
+    public ArrayList<Resource> getResources() {
+        return resources;
+    }
+
+    public void setResources(ArrayList<Resource> resources) {
+        this.resources = resources;
+    }
     
     public Bag() {
     }

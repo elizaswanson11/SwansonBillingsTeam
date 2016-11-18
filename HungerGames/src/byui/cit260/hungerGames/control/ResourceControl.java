@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.hungerGames.control;
+import byui.cit260.hungerGames.model.Resource;
 
 /**
  *
@@ -41,5 +42,5 @@ public class ResourceControl {
         else {
             return -1;
         }
-}
+    }
 }
