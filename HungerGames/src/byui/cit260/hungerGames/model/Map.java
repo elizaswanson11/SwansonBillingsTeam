@@ -22,7 +22,7 @@ public class Map implements Serializable{
  //Assign each scene to a location in the map
 //END
     private static Map createMap() {
-        Map map = new Map(20, 20);
+        Map map = new Map(9, 9);
         
         //Scene[] scenes = createScenes();
         
