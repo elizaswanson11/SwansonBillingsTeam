@@ -22,6 +22,7 @@ public class GameMenuView extends View{
               + "\nM - Display Map"
               + "\nC - Character Statistics"
               + "\nA - Actions"
+              + "\nV - View "
               + "\nR - Open Rebellion Box"
               + "\nQ - Quit"
               + "\n--------------------------------");
