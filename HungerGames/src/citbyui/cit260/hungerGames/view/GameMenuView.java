@@ -65,7 +65,7 @@ public class GameMenuView extends View{
         Location[][] locations = map.locations;
         // PRINT the title
         // PRINT the column numbers in the header
-        System.out.println("\n                THE ARENA"
+        System.out.println("\n                      THE ARENA"
                 + "\n                                                                                      "
                 + "\n    0    1    2    3    4    5    6    7    8    9   ");
         // FOR every row in map
