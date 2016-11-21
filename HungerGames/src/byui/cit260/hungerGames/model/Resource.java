@@ -11,7 +11,6 @@ import java.io.Serializable;
  * @author elizaswanson
  */
 public enum Resource implements Serializable{
-    
     Water("Water can be collected and used to increase health points. It converts to 3 health points."),
     Food("Food can be collected and used to increase health points. It converts to 5 health points.");
     
