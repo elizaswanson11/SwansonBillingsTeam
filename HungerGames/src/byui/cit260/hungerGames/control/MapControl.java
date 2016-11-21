@@ -16,10 +16,12 @@ import byui.cit260.hungerGames.model.Scene.SceneType;
  */
 public class MapControl {
 
-    static Map createMap() {
-        Map map = null;
+   public static Map createMap() {
+        Map map = new Map(9, 9);
         
-        System.out.println("*** createMap() called ***");
+        Scene[] scenes = GameControl.createScenes();
+        
+        GameControl.assignScenesToLocations(map, scenes);
         
         return map;
     }

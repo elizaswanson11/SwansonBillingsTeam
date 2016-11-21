@@ -11,9 +11,9 @@ import java.io.Serializable;
  */
 public class Map implements Serializable{
 
-    private double rowCount;
-    private double columnCount;
-    private Location[][] locations;
+    public static int rowCount = 9;
+    public static int columnCount = 9;
+    public Location[][] locations;
     private Scene scene;
     
 //BEGIN
@@ -21,15 +21,7 @@ public class Map implements Serializable{
  //Create all of the scenes for the map
  //Assign each scene to a location in the map
 //END
-    private static Map createMap() {
-        Map map = new Map(9, 9);
-        
-        //Scene[] scenes = createScenes();
-        
-        //GameControl.assignScenesToLocations(map, scenes);
-        
-        return map;
-    }
+    
     
 //Map(rows, columns)
 //BEGIN
@@ -46,20 +38,20 @@ public class Map implements Serializable{
 //ENDFOR
 //END
     
-    public Map(int noOfRows, int noOfColumns) {
-        if (noOfRows < 1 || noOfColumns < 1) {
+    public Map(int rowCount, int columnCount) {
+        if (rowCount < 1 || columnCount < 1) {
             System.out.println("The numbers of rows/columns must be greater than 0.");
             return;
         }
         
-        this.rowCount = noOfRows;
-        this.columnCount = noOfColumns;
+        this.rowCount = rowCount;
+        this.columnCount = columnCount;
         
         //create a 2D array for Location objects
-        this.locations = new Location[noOfRows][noOfColumns];
+        this.locations = new Location[rowCount][columnCount];
         
-        for (int row = 0; row < noOfRows; row++) {
-            for (int column = 0; column < noOfColumns; column++) {
+        for (int row = 0; row < rowCount; row++) {
+            for (int column = 0; column < columnCount; column++) {
                 Location location = new Location();
                 location.setColumn(column);
                 location.setRow(row);
@@ -110,7 +102,7 @@ public class Map implements Serializable{
         return rowCount;
     }
 
-    public void setRowCount(double rowCount) {
+    public void setRowCount(int rowCount) {
         this.rowCount = rowCount;
     }
 
@@ -118,7 +110,7 @@ public class Map implements Serializable{
         return columnCount;
     }
 
-    public void setColumnCount(double columnCount) {
+    public void setColumnCount(int columnCount) {
         this.columnCount = columnCount;
     }
 

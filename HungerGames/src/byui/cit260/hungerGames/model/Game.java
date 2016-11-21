@@ -5,7 +5,6 @@
  */
 package byui.cit260.hungerGames.model;
 import java.io.Serializable;
-import byui.cit260.hungerGames.model.Character;
 /**
  *
  * @author elizaswanson
