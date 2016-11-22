@@ -12,7 +12,13 @@ import java.io.Serializable;
  */
 public enum Resource implements Serializable{
     Water("Water can be collected and used to increase health points. It converts to 3 health points."),
-    Food("Food can be collected and used to increase health points. It converts to 5 health points.");
+    Berry("A berry can be collected and used to increase health points. It converts to 1 heath point."),
+    Fish("Fish can be collected and used to increase health points. It converts to 2 health points."),
+    Rabbit("A rabbit can be hunted and used to increase health points. It converts to 3 health points."),
+    Mushroom("A mushroom can be collected and used to increase health points. It converts to 1 health point."),
+    Radish("A radish can be collected and used to increase health points. It converts to 1 health point."),
+    Bird("A bird can be collected and used to increase health points. It converts to 2 health points."),
+    Medicine("Some medicine can be collected and used to increase health points. It converts to 4 health points.");
     
     private final String description;
     private final double healthValue;
