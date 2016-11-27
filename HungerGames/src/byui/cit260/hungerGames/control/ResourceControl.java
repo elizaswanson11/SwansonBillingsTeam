@@ -43,4 +43,15 @@ public class ResourceControl {
             return -1;
         }
     }
+    
+    public static int calcMaxResourceValue() {
+      Resource[] resource = Resource.values();
+      int maxAmount = 0;
+      for (Resource item : resource) {
+           if (item.healthValue > maxAmount) {
+               maxAmount = item.healthValue;
+           }
+      }
+      return maxAmount;
+    }
 }

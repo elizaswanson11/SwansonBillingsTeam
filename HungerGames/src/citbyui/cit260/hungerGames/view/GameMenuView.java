@@ -27,8 +27,8 @@ public class GameMenuView extends View{
               + "\nM - Display Map"
               + "\nC - Character Statistics"
               + "\nA - Actions"
-              + "\nV - View "
-              + "\nR - Open Rebellion Box"
+              + "\nO - Open Rebellion Box"
+              + "\nR - Calculate Max Resource Value"
               + "\nQ - Quit"
               + "\n--------------------------------");
     }
@@ -47,8 +47,11 @@ public class GameMenuView extends View{
             case "A":
                 this.displayActionsMenu();
                 break;
-            case "R":
+            case "O":
                 this.doOpenRebellionBox();
+                break;
+            case "R":
+                this.calcMaxResource();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try Again");
@@ -115,5 +118,10 @@ System.out.println("-----------------------------------------------------");
     private void doOpenRebellionBox() {
         RebellionBoxView rebellionBoxView = new RebellionBoxView();
         rebellionBoxView.display();
+    }
+    
+    private void calcMaxResource() {
+        CalcMaxResourceValueView calcMaxResourceValueView = new CalcMaxResourceValueView();
+        calcMaxResourceValueView.display();
     }
 }

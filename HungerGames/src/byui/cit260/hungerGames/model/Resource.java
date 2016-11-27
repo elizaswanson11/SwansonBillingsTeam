@@ -11,24 +11,24 @@ import java.io.Serializable;
  * @author elizaswanson
  */
 public enum Resource implements Serializable{
-    Water("Water can be collected and used to increase health points. It converts to 3 health points."),
-    Berry("A berry can be collected and used to increase health points. It converts to 1 heath point."),
-    Fish("Fish can be collected and used to increase health points. It converts to 2 health points."),
-    Rabbit("A rabbit can be hunted and used to increase health points. It converts to 3 health points."),
-    Mushroom("A mushroom can be collected and used to increase health points. It converts to 1 health point."),
-    Radish("A radish can be collected and used to increase health points. It converts to 1 health point."),
-    Bird("A bird can be collected and used to increase health points. It converts to 2 health points."),
-    Medicine("Some medicine can be collected and used to increase health points. It converts to 4 health points.");
+    Water("Water can be collected and used to increase health points. It converts to 3 health points.", 3),
+    Berry("A berry can be collected and used to increase health points. It converts to 1 heath point.", 1),
+    Fish("Fish can be collected and used to increase health points. It converts to 2 health points.", 2),
+    Rabbit("A rabbit can be hunted and used to increase health points. It converts to 3 health points.", 3),
+    Mushroom("A mushroom can be collected and used to increase health points. It converts to 1 health point.", 1),
+    Radish("A radish can be collected and used to increase health points. It converts to 1 health point.", 1),
+    Bird("A bird can be collected and used to increase health points. It converts to 2 health points.", 2),
+    Medicine("Some medicine can be collected and used to increase health points. It converts to 4 health points.", 4);
     
     private final String description;
-    private final double healthValue;
+    public final int healthValue;
     private final double maxAmount;
     private final Point coordinates;
 
-    Resource(String description) {
+    Resource(String description, int healthValue) {
         this.description = description;
         this.coordinates = new Point(1,1);
-        this.healthValue = 0; // will change value when we decide what it'll be.
+        this.healthValue = healthValue; // will change value when we decide what it'll be.
         this.maxAmount = 0; // will change value when we decide what it'll be.
     }
     public String getDescription() {
