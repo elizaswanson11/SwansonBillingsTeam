@@ -33,13 +33,12 @@ public class CalcMaxResourceValueView extends View{
                 break;
         }
         
-        return false;
+        return true;
     }   
     
-    private boolean calcMaxResource(){
+    private void calcMaxResource(){
         int healthValue = ResourceControl.calcMaxResourceValue();
         System.out.println("The max health value from a resource is " + healthValue + ".");
-        return false;
     }
 
 }
