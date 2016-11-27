@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package byui.cit260.hungerGames.control;
+
 import byui.cit260.hungerGames.model.Resource;
+
 
 /**
  *
@@ -45,13 +47,17 @@ public class ResourceControl {
     }
     
     public static int calcMaxResourceValue() {
-      Resource[] resource = Resource.values();
-      int maxAmount = 0;
-      for (Resource item : resource) {
-           if (item.healthValue > maxAmount) {
-               maxAmount = item.healthValue;
-           }
-      }
-      return maxAmount;
+        Resource[] resource = Resource.values();
+        int returnValue = 0;
+        for (Resource item : resource) {
+            if (item.healthValue < 0) {
+                returnValue = -1;
+                break;
+            }
+            else {
+                returnValue = 1;
+            }
+        }
+        return returnValue;
     }
 }
