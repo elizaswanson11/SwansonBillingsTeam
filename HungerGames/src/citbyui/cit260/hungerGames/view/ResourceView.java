@@ -6,7 +6,6 @@
 package citbyui.cit260.hungerGames.view;
 
 import byui.cit260.hungerGames.control.ResourceControl;
-import byui.cit260.hungerGames.model.Resource;
 
 /**
  *
