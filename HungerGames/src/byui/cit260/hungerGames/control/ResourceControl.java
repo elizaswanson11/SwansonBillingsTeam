@@ -6,6 +6,7 @@
 package byui.cit260.hungerGames.control;
 
 import byui.cit260.hungerGames.model.Resource;
+import citbyui.cit260.hungerGames.exceptions.ResourceControlException;
 
 
 /**
@@ -13,7 +14,10 @@ import byui.cit260.hungerGames.model.Resource;
  * @author elizaswanson
  */
 public class ResourceControl {
-    public double calcResourceReward(double capitolPopularity) {
+    
+    public double calcResourceReward(double capitolPopularity) 
+        throws ResourceControlException{
+        
         //calcResourceReward(capitolPopularity) {
         //BEGIN
         //IF (capitolPopularity < 3 OR capitolPopularity > 15) THEN
@@ -23,7 +27,7 @@ public class ResourceControl {
         //RETURN resourceReward
         //}
         if (capitolPopularity < 3 || capitolPopularity > 15) {
-            return -1;
+            throw new ResourceControlException("Cannot complete calculation. Capital Popularity out of bounds.");
         }
         else {
             int award = (int)(Math.random() * 10 + 1);
@@ -63,19 +67,15 @@ public class ResourceControl {
         }
         return false;
     }
-    public static int calcMaxResourceValue() {
+    public static void calcMaxResourceValue() 
+        throws ResourceControlException {
         Resource[] resource = Resource.values();
         int returnValue = 0;
         for (Resource item : resource) {
             if (item.healthValue < 0) {
-                returnValue = -1;
-                break;
-            }
-            else {
-                returnValue = 1;
+                throw new ResourceControlException("Cannot complete function. Health Value is less than 0.");
             }
         }
-        return returnValue;
     }
 
 }
