@@ -19,6 +19,7 @@ public class HelpMenuView extends View{
               + "\nM - Move Character"
               + "\nO - Game Objectives"
               + "\nP - About Popularity"
+              + "\nR - About Resources"
               + "\nQ - Quit"
               + "\n--------------------------------");
     }
@@ -36,6 +37,9 @@ public class HelpMenuView extends View{
                 break;
             case "P":
                 this.viewAboutPopularity();
+                break;
+            case "R":
+                this.viewResourceView();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try Again");
@@ -71,5 +75,10 @@ public class HelpMenuView extends View{
                 + "\nThis message will be followed with any necessary information about the "
                 + "\nlocation you needs to know. If you enter an invalid number, you must try again. "
                 + "\n******************************************************************");
+    }
+
+    private void viewResourceView() {
+        ResourceView resourceView = new ResourceView();
+        resourceView.display();
     }
 }

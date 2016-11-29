@@ -25,7 +25,7 @@ public class CalcMaxResourceValueView extends View{
         
         switch (value) {
             case "Y":
-                this.calcMaxResource();
+                //this.calcMaxResource();
                 break;
             case "N":
                 break;

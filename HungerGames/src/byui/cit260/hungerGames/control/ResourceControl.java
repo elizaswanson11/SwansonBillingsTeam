@@ -45,7 +45,24 @@ public class ResourceControl {
             return -1;
         }
     }
-    
+    public static boolean findResource(String resourceType) {
+        //FOR index = 0 TO list.length-1
+        //IF ( list[index] = = value)
+        //THEN
+        //RETURN index
+        //ENDIF
+        //ENDFOR
+        //RETURN -1 
+        Resource[] resourceArray = Resource.values();
+        for (int i = 0; i <= resourceArray.length; i++) {
+            if (resourceArray[i].name().equals(resourceType)) {
+                System.out.println(resourceArray[i].getDescription());
+            }
+            
+            return true;
+        }
+        return false;
+    }
     public static int calcMaxResourceValue() {
         Resource[] resource = Resource.values();
         int returnValue = 0;
@@ -60,4 +77,7 @@ public class ResourceControl {
         }
         return returnValue;
     }
+
 }
+    
+    
