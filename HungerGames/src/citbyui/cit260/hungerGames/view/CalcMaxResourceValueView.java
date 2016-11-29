@@ -37,20 +37,20 @@ public class CalcMaxResourceValueView extends View{
         return true;
     }   
     
-    //private void calcMaxResource(){
-        //int healthValue = ResourceControl.calcMaxResourceValue();
-        //if (healthValue > 0) {
-            //Resource[] resource = Resource.values();
-            //int maxAmount = 0;
-            //for (Resource item : resource) {
-                //if (item.healthValue > maxAmount) {
-                //maxAmount = item.healthValue;
-                //}
-            //}
-            //System.out.println("The max health value from a resource is " + maxAmount + ".");
-        //}
-        //else {
-            //System.out.println("The value of the received health is not valid.");
-        //}
-    //}
+    private void calcMaxResource(){
+        int healthValue = ResourceControl.calcMaxResourceValue();
+        if (healthValue > 0) {
+            Resource[] resource = Resource.values();
+            int maxAmount = 0;
+            for (Resource item : resource) {
+                if (item.healthValue > maxAmount) {
+                maxAmount = item.healthValue;
+                }
+            }
+            System.out.println("The max health value from a resource is " + maxAmount + ".");
+        }
+        else {
+            System.out.println("The value of the received health is not valid.");
+        }
+    }
 }
