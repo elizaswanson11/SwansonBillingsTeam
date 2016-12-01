@@ -5,6 +5,7 @@
  */
 package byui.cit260.hungerGames.control;
 
+import citbyui.cit260.hungerGames.exceptions.PuzzleCalculationException;
 import java.util.Random;
 
 /**
@@ -49,7 +50,8 @@ public class PuzzleCalculation {
         
     }
 
-    public static double openRebellionBox(double capitolPopularity, double rebellionPopularity) {
+    public static double openRebellionBox(double capitolPopularity, double rebellionPopularity) 
+        throws PuzzleCalculationException {
     //double openRebellionBox(double capitolPopularity, double rebellionPopularity) {
     //BEGIN
     //IF (capitolPopularity < 0 OR capitolPopularity > 15) THEN
@@ -65,10 +67,10 @@ public class PuzzleCalculation {
     //}
     
         if (capitolPopularity < 0 || capitolPopularity > 15) {
-            return -1;
+            throw new PuzzleCalculationException("Cannot complete calculation. Capital Popularity out of bounds.");
         }
         if (rebellionPopularity < 0 || rebellionPopularity > 15){
-            return -1;
+            throw new PuzzleCalculationException("Cannot complete calculation. Rebellion Popularity out of bounds.");
         }
         
         double differenceScore = (rebellionPopularity - capitolPopularity) * 100;
