@@ -61,9 +61,8 @@ public class ResourceControl {
         for (int i = 0; i <= resourceArray.length; i++) {
             if (resourceArray[i].name().equals(resourceType)) {
                 System.out.println(resourceArray[i].getDescription());
+                return true;
             }
-            
-            return true;
         }
         return false;
     }

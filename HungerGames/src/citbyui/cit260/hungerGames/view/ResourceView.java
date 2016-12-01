@@ -35,31 +35,28 @@ public class ResourceView extends View{
         
         switch (value) {
             case "W":
-                ResourceControl.findResource("water");
+                ResourceControl.findResource("Water");
                 break;
             case "B":
-                ResourceControl.findResource("berry");
+                ResourceControl.findResource("Berry");
                 break;
             case "F":
-                ResourceControl.findResource("fish");
+                ResourceControl.findResource("Fish");
                 break;
             case "R":
-                ResourceControl.findResource("rabbit");
+                ResourceControl.findResource("Rabbit");
                 break;
             case "M":
-                ResourceControl.findResource("mushroom");
+                ResourceControl.findResource("Mushroom");
                 break;
             case "A":
-                ResourceControl.findResource("radish");
+                ResourceControl.findResource("Radish");
                 break;
             case "I":
-                ResourceControl.findResource("bird");
+                ResourceControl.findResource("Bird");
                 break;
             case "E":
-                ResourceControl.findResource("medicine");
-                break;
-            case "Q":
-                ResourceControl.findResource("medicine");
+                ResourceControl.findResource("Medicine");
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try Again");
