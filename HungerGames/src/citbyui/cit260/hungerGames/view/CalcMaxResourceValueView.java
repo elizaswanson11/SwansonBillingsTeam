@@ -28,7 +28,7 @@ public class CalcMaxResourceValueView extends View {
 
         switch (value) {
             case "Y":
-                //this.calcMaxResource();
+                this.calcMaxResource();
                 break;
             case "N":
                 break;
@@ -47,6 +47,7 @@ public class CalcMaxResourceValueView extends View {
             System.out.println(rce.getMessage());
             return;
         }
+        
         Resource[] resource = Resource.values();
         int maxAmount = 0;
         for (Resource item : resource) {
