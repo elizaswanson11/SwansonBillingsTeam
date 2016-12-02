@@ -10,5 +10,7 @@ package byui.cit260.hungerGames.control;
  * @author elizaswanson
  */
 public class PopularityControl {
-    
+    //Eliza maybe we should just hard code in some type of value for the popularities for the game.
+    //I'm just worried that we won't have anyway to actually have the user get any popularity.
+ 
 }
