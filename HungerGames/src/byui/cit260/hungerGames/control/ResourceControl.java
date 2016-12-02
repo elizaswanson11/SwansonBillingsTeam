@@ -49,7 +49,8 @@ public class ResourceControl {
             return -1;
         }
     }
-    public static boolean findResource(String resourceType) {
+    public static String findResource(String resourceType) 
+        throws ResourceControlException {
         //FOR index = 0 TO list.length-1
         //IF ( list[index] = = value)
         //THEN
@@ -60,11 +61,11 @@ public class ResourceControl {
         Resource[] resourceArray = Resource.values();
         for (int i = 0; i <= resourceArray.length; i++) {
             if (resourceArray[i].name().equals(resourceType)) {
-                System.out.println(resourceArray[i].getDescription());
-                return true;
+                 return resourceArray[i].getDescription();
             }
         }
-        return false;
+        throw new ResourceControlException("Resource not found.");
+        
     }
     public static void calcMaxResourceValue() 
         throws ResourceControlException {
