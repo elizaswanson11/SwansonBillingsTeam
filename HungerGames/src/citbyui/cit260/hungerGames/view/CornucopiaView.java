@@ -6,22 +6,24 @@
 package citbyui.cit260.hungerGames.view;
 
 import byui.cit260.hungerGames.control.PuzzleCalculation;
+import citbyui.cit260.hungerGames.exceptions.PuzzleCalculationException;
 
 /**
  *
  * @author elizaswanson
  */
 public class CornucopiaView extends View {
+
     private String menu;
 
     public CornucopiaView() {
         super("\n"
-              + "\n------------------------------------------------------------"
-              + "\n| At the beginning of the games, do you..                  |"
-              + "\n------------------------------------------------------------"
-              + "\nA - Run to the Cornucopia and participate in the bloodbath"
-              + "\nB - Escape into the woods"
-              + "\n------------------------------------------------------------");
+                + "\n------------------------------------------------------------"
+                + "\n| At the beginning of the games, do you..                  |"
+                + "\n------------------------------------------------------------"
+                + "\nA - Run to the Cornucopia and participate in the bloodbath"
+                + "\nB - Escape into the woods"
+                + "\n------------------------------------------------------------");
     }
 
     @Override
@@ -29,19 +31,22 @@ public class CornucopiaView extends View {
         value = value.toUpperCase();
         String compareValue = "A";
         String compareSecondValue = "B";
-       
+
         if (value.equals(compareValue)) {
-            int reward = PuzzleCalculation.calcCornucopiaReward();
+            int reward = 0;
+            try {
+                reward = PuzzleCalculation.calcCornucopiaReward();
+            } catch (PuzzleCalculationException pce) {
+                System.out.println(pce.getMessage());
+            }
             System.out.println("Your reward is " + reward + ".");
-        }
-        else if (value.equals(compareSecondValue)) {
+        } else if (value.equals(compareSecondValue)) {
             System.out.println("You have avoided the bloodbath. You have incurred no injuries but earned no reward.");
-        }
-        else  {
+        } else {
             System.out.println("Invalid value. Please enter a valid value.");
             return false;
         }
-        
+
         return true;
     }
 }
