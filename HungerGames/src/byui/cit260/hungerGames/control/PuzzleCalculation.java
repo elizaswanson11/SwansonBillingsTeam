@@ -32,70 +32,70 @@ public class PuzzleCalculation {
     }
     RETURN cornucopiaAward
     } */
-
-    public static int calcCornucopiaReward() {
+    public static int calcCornucopiaReward()
+            throws PuzzleCalculationException {
         Random random = new Random();
         int cornucopiaAward;
-        int percentageWin = random.nextInt(99) + 1;
+        int percentageWin = 0;
+        try {
+            percentageWin = random.nextInt(99) + 1;
+        } catch (NumberFormatException nf) {
+            throw new PuzzleCalculationException("The calclulation could not be completed, as the input was a numerical number");
+        }
+
         if (percentageWin <= 25 && percentageWin > 5) {
             cornucopiaAward = random.nextInt(3) + 1;
-        }
-        else if (percentageWin <= 5) {
+        } else if (percentageWin <= 5) {
             cornucopiaAward = -15;
-        }
-        else {
+        } else {
             cornucopiaAward = random.nextInt(4) + 1;
         }
         return cornucopiaAward;
-        
+
     }
 
-    public static double openRebellionBox(double capitolPopularity, double rebellionPopularity) 
-        throws PuzzleCalculationException {
-    //double openRebellionBox(double capitolPopularity, double rebellionPopularity) {
-    //BEGIN
-    //IF (capitolPopularity < 0 OR capitolPopularity > 15) THEN
-    //  RETURN -1
-    //IF (rebellionPopularity < 1 OR rebellionPopularity > 15) THEN
-    //  RETURN -1
-    //differenceScore = (rebellionPopularity – capitolPopularity) * 100
-    //IF(differenceScore > 100) THEN
-    //  RETURN 1
-    //ELSE
-    //  RETURN 0
-    //  }
-    //}
-    
+    public static double openRebellionBox(double capitolPopularity, double rebellionPopularity)
+            throws PuzzleCalculationException {
+        //double openRebellionBox(double capitolPopularity, double rebellionPopularity) {
+        //BEGIN
+        //IF (capitolPopularity < 0 OR capitolPopularity > 15) THEN
+        //  RETURN -1
+        //IF (rebellionPopularity < 1 OR rebellionPopularity > 15) THEN
+        //  RETURN -1
+        //differenceScore = (rebellionPopularity – capitolPopularity) * 100
+        //IF(differenceScore > 100) THEN
+        //  RETURN 1
+        //ELSE
+        //  RETURN 0
+        //  }
+        //}
+
         if (capitolPopularity < 0 || capitolPopularity > 15) {
             throw new PuzzleCalculationException("Cannot complete calculation. Capital Popularity out of bounds.");
         }
-        if (rebellionPopularity < 0 || rebellionPopularity > 15){
+        if (rebellionPopularity < 0 || rebellionPopularity > 15) {
             throw new PuzzleCalculationException("Cannot complete calculation. Rebellion Popularity out of bounds.");
         }
-        
+
         double differenceScore = (rebellionPopularity - capitolPopularity) * 100;
         if (differenceScore > 100) {
             return 1;
-        }
-        else {
+        } else {
             return 0;
         }
     }
-    
-    public static double compareTraining(Integer number) {
+
+    public static double compareTraining(Integer number)
+            throws PuzzleCalculationException {
         Random random = new Random();
         Integer numberTwo = random.nextInt(8) + 1;
-        
-        if(number < 0 || number > 9) {
-            return -1;
-        }
-        else {
-            if (number == numberTwo) {
-                return 1;
-            }
-            else {
-                return 0;
-            }
+
+        if (number < 0 || number > 9) {
+            throw new PuzzleCalculationException("Invalid Entry: Please input a number between 0 and 9.");
+        } else if (number == numberTwo) {
+            return 1;
+        } else {
+            return 0;
         }
     }
 
