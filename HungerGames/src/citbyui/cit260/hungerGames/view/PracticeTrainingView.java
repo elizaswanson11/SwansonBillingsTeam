@@ -12,39 +12,32 @@ import citbyui.cit260.hungerGames.exceptions.PuzzleCalculationException;
  *
  * @author eliza
  */
-public class PracticeTrainingView extends View{
+public class PracticeTrainingView extends View {
+
     private String value;
     private int counter = 1;
-    
+
     public PracticeTrainingView() {
         super("\nPlease enter a number between 1 and 9.");
     }
-    
+
     @Override
     public boolean doAction(String value) {
-        Integer number = Integer.parseInt(value);
-        
-        double result = 0;
-        
-        try{
-            result = PuzzleCalculation.compareTraining(number);
-        } catch (PuzzleCalculationException pce) {
-            System.out.println(pce.getMessage());
-            return false;
-        }
-        
-        if (result > 0){
-            System.out.println("Congratulations you were successful in learning a new skill." +
-                               "\n1 point has been added to your training level.");
+        try {
+            Integer number = Integer.parseInt(value);
+            PuzzleCalculation.compareTraining(number);
+            System.out.println("Congratulations you were successful in learning a new skill."
+                    + "\n1 point has been added to your training level.");
             System.out.println("It took you " + counter + " times to guess the right answer.");
             return true;
-        }
-        else {
-            System.out.println("I'm sorry, your number was not correct." +
-                               "\nPlease enter a new number and try again.");
+        } catch (PuzzleCalculationException pce) {
+            System.out.println(pce.getMessage());
+            counter++;
+            return false;
+        } catch (NumberFormatException nfe) {
+            System.out.println("Error. The value you entered was not a numeric number.");
             counter++;
             return false;
         }
-        
     }
 }

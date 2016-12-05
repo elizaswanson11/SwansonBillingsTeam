@@ -85,17 +85,16 @@ public class PuzzleCalculation {
         }
     }
 
-    public static double compareTraining(Integer number)
+    public static void compareTraining(Integer number)
             throws PuzzleCalculationException {
         Random random = new Random();
         Integer numberTwo = random.nextInt(8) + 1;
 
         if (number < 0 || number > 9) {
             throw new PuzzleCalculationException("Invalid Entry: Please input a number between 0 and 9.");
-        } else if (number == numberTwo) {
-            return 1;
-        } else {
-            return 0;
+        } else if (number != numberTwo) {
+            throw new PuzzleCalculationException("I'm sorry, your number was not correct." +
+                               "\nPlease enter a new number and try again.");
         }
     }
 
