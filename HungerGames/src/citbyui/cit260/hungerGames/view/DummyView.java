@@ -6,6 +6,7 @@
 package citbyui.cit260.hungerGames.view;
 
 import byui.cit260.hungerGames.control.ResourceControl;
+import citbyui.cit260.hungerGames.exceptions.ResourceControlException;
 
 /**
  *
@@ -19,20 +20,19 @@ public class DummyView extends View {
 
     @Override
     public boolean doAction(String value) {
-        int resourceValue = Integer.parseInt(value);
-        int returnValue = ResourceControl.dummyControl(resourceValue);
-        if (returnValue == 2) {
-            System.out.println("Your number is greater than 10.");
+        int resourceValue;
+        try {
+            resourceValue = Integer.parseInt(value);
+            ResourceControl.dummyControl(resourceValue);
+            System.out.println("Congrats! Your number is equal to ten.");
+        } catch (ResourceControlException rce) {
+            System.out.println(rce.getMessage());
+            return false;
+        } catch (NumberFormatException nfe) {
+            System.out.println("You must enter a valid number. Try again.");
+            return false;
         }
-        else if (returnValue == 1) {
-            System.out.println("Your number is equal to 10.");
-        }
-        else if (returnValue == 0) {
-            System.out.println("Your number is less than 10.");
-        }
-        else {
-            System.out.println("Invalid value entered. Please enter a valid value.");
-        }
+
         return true;
-    }   
+    }
 }
