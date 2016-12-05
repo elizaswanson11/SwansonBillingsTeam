@@ -6,66 +6,70 @@
 package citbyui.cit260.hungerGames.view;
 
 import byui.cit260.hungerGames.control.ResourceControl;
+import citbyui.cit260.hungerGames.exceptions.ResourceControlException;
 
 /**
  *
  * @author elizaswanson
  */
-public class ResourceView extends View{
+public class ResourceView extends View {
+
     public ResourceView() {
         super("\n"
-              + "\n--------------------------------"
-              + "\n| About Resources              |"
-              + "\n--------------------------------"
-              + "\nW - Water"
-              + "\nB - Berry"
-              + "\nF - Fish"
-              + "\nR - Rabbit"
-              + "\nM - Mushroom"
-              + "\nA - Radish"
-              + "\nI - Bird"
-              + "\nE - Medicine"
-              + "\nQ - Quit"
-              + "\n--------------------------------");
+                + "\n--------------------------------"
+                + "\n| About Resources              |"
+                + "\n--------------------------------"
+                + "\nW - Water"
+                + "\nB - Berry"
+                + "\nF - Fish"
+                + "\nR - Rabbit"
+                + "\nM - Mushroom"
+                + "\nA - Radish"
+                + "\nI - Bird"
+                + "\nE - Medicine"
+                + "\nQ - Quit"
+                + "\n--------------------------------");
     }
-    
+
     @Override
     public boolean doAction(String value) {
         value = value.toUpperCase();
-        
-        switch (value) {
-            case "W":
-                ResourceControl.findResource("water");
-                break;
-            case "B":
-                ResourceControl.findResource("berry");
-                break;
-            case "F":
-                ResourceControl.findResource("fish");
-                break;
-            case "R":
-                ResourceControl.findResource("rabbit");
-                break;
-            case "M":
-                ResourceControl.findResource("mushroom");
-                break;
-            case "A":
-                ResourceControl.findResource("radish");
-                break;
-            case "I":
-                ResourceControl.findResource("bird");
-                break;
-            case "E":
-                ResourceControl.findResource("medicine");
-                break;
-            case "Q":
-                ResourceControl.findResource("medicine");
-                break;
-            default:
-                System.out.println("\n*** Invalid selection *** Try Again");
-                break;
+
+        try {
+            switch (value) {
+                case "W":
+                    ResourceControl.findResource("Water");
+                    break;
+                case "B":
+                    ResourceControl.findResource("Berry");
+                    break;
+                case "F":
+                    ResourceControl.findResource("Fish");
+                    break;
+                case "R":
+                    ResourceControl.findResource("Rabbit");
+                    break;
+                case "M":
+                    ResourceControl.findResource("Mushroom");
+                    break;
+                case "A":
+                    ResourceControl.findResource("Radish");
+                    break;
+                case "I":
+                    ResourceControl.findResource("Bird");
+                    break;
+                case "E":
+                    ResourceControl.findResource("Medicine");
+                    break;
+                default:
+                    System.out.println("\n*** Invalid selection *** Try Again");
+                    break;
+            }
+        } catch (ResourceControlException rce) {
+            System.out.println(rce.getMessage());
+            return false;
         }
-        
-        return false;
+
+        return true;
     }
 }

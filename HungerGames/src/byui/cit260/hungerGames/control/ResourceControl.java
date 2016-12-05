@@ -8,16 +8,15 @@ package byui.cit260.hungerGames.control;
 import byui.cit260.hungerGames.model.Resource;
 import citbyui.cit260.hungerGames.exceptions.ResourceControlException;
 
-
 /**
  *
  * @author elizaswanson
  */
 public class ResourceControl {
-    
-    public double calcResourceReward(double capitolPopularity) 
-        throws ResourceControlException{
-        
+
+    public double calcResourceReward(double capitolPopularity)
+            throws ResourceControlException {
+
         //calcResourceReward(capitolPopularity) {
         //BEGIN
         //IF (capitolPopularity < 3 OR capitolPopularity > 15) THEN
@@ -28,28 +27,24 @@ public class ResourceControl {
         //}
         if (capitolPopularity < 3 || capitolPopularity > 15) {
             throw new ResourceControlException("Cannot complete calculation. Capital Popularity out of bounds.");
-        }
-        else {
-            int award = (int)(Math.random() * 10 + 1);
+        } else {
+            int award = (int) (Math.random() * 10 + 1);
             double resourceReward = award + (award * (capitolPopularity / 10));
             return resourceReward;
         }
     }
-    public static int dummyControl(int resourceValue) {
+
+    public static void dummyControl(int resourceValue)
+            throws ResourceControlException {
         if (resourceValue > 10) {
-            return 2;
-        }
-        else if(resourceValue == 10) {
-            return 1;
-        }
-        else if (resourceValue < 10) {
-            return 0;
-        }
-        else {
-            return -1;
+            throw new ResourceControlException("Your number is too high.");
+        } else if (resourceValue < 10) {
+            throw new ResourceControlException("Your number is too low.");
         }
     }
-    public static boolean findResource(String resourceType) {
+
+    public static String findResource(String resourceType)
+            throws ResourceControlException {
         //FOR index = 0 TO list.length-1
         //IF ( list[index] = = value)
         //THEN
@@ -60,15 +55,15 @@ public class ResourceControl {
         Resource[] resourceArray = Resource.values();
         for (int i = 0; i <= resourceArray.length; i++) {
             if (resourceArray[i].name().equals(resourceType)) {
-                System.out.println(resourceArray[i].getDescription());
+                return resourceArray[i].getDescription();
             }
-            
-            return true;
         }
-        return false;
+        throw new ResourceControlException("Resource not found.");
+
     }
-    public static void calcMaxResourceValue() 
-        throws ResourceControlException {
+
+    public static void calcMaxResourceValue()
+            throws ResourceControlException {
         Resource[] resource = Resource.values();
         int returnValue = 0;
         for (Resource item : resource) {
@@ -79,5 +74,3 @@ public class ResourceControl {
     }
 
 }
-    
-    

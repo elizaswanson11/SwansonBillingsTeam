@@ -57,12 +57,12 @@ public class GameControl {
         
         Scene fightScene = new Scene();
         fightScene.setDescription(
-            "You have encounted another tribute and now you are going to fight. Hope you survive!");
+            "You have encountered another tribute and now you are going to fight. Hope you survive!");
         scenes[Scene.SceneType.fight.ordinal()] = fightScene;
         
         Scene resourceScene = new Scene();
         resourceScene.setDescription(
-            "You've come accross some resources you know you can use. Begin collecting now.");
+            "You've come across some resources you know you can use. Begin collecting now.");
         scenes[Scene.SceneType.resource.ordinal()] = resourceScene;
         
         Scene interviewScene = new Scene();
