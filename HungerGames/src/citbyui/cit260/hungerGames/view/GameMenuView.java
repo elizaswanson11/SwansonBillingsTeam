@@ -54,7 +54,8 @@ public class GameMenuView extends View{
                 this.calcMaxResource();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try Again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid selection *** Try Again");
                 break;
         }
         return false;
@@ -68,19 +69,19 @@ public class GameMenuView extends View{
         Location[][] locations = map.locations;
         // PRINT the title
         // PRINT the column numbers in the header
-        System.out.println("\n                      THE ARENA"
+        this.console.println("\n                      THE ARENA"
                 + "\n                                                                                      "
                 + "\n    0    1    2    3    4    5    6    7    8    9   ");
         // FOR every row in map
         for (int i = 0; i <= Map.rowCount; i++) {
             // PRINT a row divider
-            System.out.println("-----------------------------------------------------");
+            this.console.println("-----------------------------------------------------");
         // PRINT the row number on a new line
-            System.out.printf((i) + " "); 
+            this.console.printf((i) + " "); 
         // FOR every column in row
             for (int w = 0; w <= Map.columnCount; w++) {
         // PRINT a column divider
-                System.out.printf("|" + " ?? ");
+                this.console.printf("|" + " ?? ");
         //location = locations[row][column]
         //location = locations[Map.rowCount][Map.columnCount];
         // IF location has been visited
@@ -90,11 +91,11 @@ public class GameMenuView extends View{
             // ENDIF
             }
         // PRINT the ending column divider
-        System.out.println("|  ");
+        this.console.println("|  ");
         // ENDFOR
         }
 // PRINT ending row divider
-System.out.println("-----------------------------------------------------");
+this.console.println("-----------------------------------------------------");
 //END
 }      
        
@@ -107,7 +108,7 @@ System.out.println("-----------------------------------------------------");
                 
 
     private void displayCharacterStatistics() {
-        System.out.println("*** The displayCharacterStatistics() was called ***");
+        this.console.println("*** The displayCharacterStatistics() was called ***");
     }
 
     private void displayActionsMenu() {

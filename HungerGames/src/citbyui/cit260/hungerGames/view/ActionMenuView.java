@@ -40,7 +40,8 @@ public class ActionMenuView extends View{
                 this.checkForResources();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try Again");
+                ErrorView.display(this.getClass().getName(),
+                                  "\n*** Invalid selection *** Try Again");
                 break;
         }
         
@@ -48,11 +49,11 @@ public class ActionMenuView extends View{
     }   
 
     private void gatherResources() {
-        System.out.println("\n*** gatherResources stub function called ***");
+        this.console.println("\n*** gatherResources stub function called ***");
     }
 
     private void askForResources() {
-        System.out.println("\n*** askForResources stub function called ***");
+        this.console.println("\n*** askForResources stub function called ***");
     }
 
     private void checkForResources() {

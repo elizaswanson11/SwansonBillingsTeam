@@ -10,7 +10,12 @@ import byui.cit260.hungerGames.model.Map;
 import byui.cit260.hungerGames.model.Player;
 import byui.cit260.hungerGames.model.Character;
 import byui.cit260.hungerGames.model.Scene;
+import citbyui.cit260.hungerGames.exceptions.GameControlException;
 import hungergames.HungerGames;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 /**
  *
@@ -48,7 +53,7 @@ public class GameControl {
     }
 
     private static Character[] createCharacter() {
-        System.out.println("*** createCharacter stub function called in GameControl ***");
+        HungerGames.getOutFile().println("*** createCharacter stub function called in GameControl ***");
         return null;
     }
     
@@ -75,6 +80,34 @@ public class GameControl {
     }
     
     public static void assignScenesToLocations(Map map, Scene[] scenes) {
-        System.out.println("*** assignScenesToLocations stub function called in GameControl ***");
+        HungerGames.getOutFile().println("*** assignScenesToLocations stub function called in GameControl ***");
+    }
+
+    public static void saveGame(Game game, String filePath)
+            throws GameControlException {
+        
+        try (FileOutputStream fops = new FileOutputStream(filePath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(game);
+        } catch(Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+        
+    }
+
+    public static void getSavedGame(String filePath) 
+               throws GameControlException {
+        Game game = null;
+        
+        try (FileInputStream fips = new FileInputStream(filePath)) {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            
+            game = (Game) input.readObject();
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+        
+        HungerGames.setCurrentGame(game);
     }
 }

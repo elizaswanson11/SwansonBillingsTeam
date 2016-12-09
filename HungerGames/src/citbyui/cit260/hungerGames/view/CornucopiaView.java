@@ -37,13 +37,15 @@ public class CornucopiaView extends View {
             try {
                 reward = PuzzleCalculation.calcCornucopiaReward();
             } catch (PuzzleCalculationException pce) {
-                System.out.println(pce.getMessage());
+                ErrorView.display(this.getClass().getName(),
+                        pce.getMessage());
             }
-            System.out.println("Your reward is " + reward + ".");
+            this.console.println("Your reward is " + reward + ".");
         } else if (value.equals(compareSecondValue)) {
-            System.out.println("You have avoided the bloodbath. You have incurred no injuries but earned no reward.");
+            this.console.println("You have avoided the bloodbath. You have incurred no injuries but earned no reward.");
         } else {
-            System.out.println("Invalid value. Please enter a valid value.");
+            ErrorView.display(this.getClass().getName(),
+                    "Invalid value. Please enter a valid value.");
             return false;
         }
 

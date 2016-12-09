@@ -25,7 +25,8 @@ public class RebellionBoxView extends View {
         try {
             rebellionPopularity = Double.parseDouble(value);
         } catch (NumberFormatException nf) {
-            System.out.println("Error. Invaild popularity value");
+            ErrorView.display(this.getClass().getName(),
+                    "Error. Invaild popularity value");
             return false;
         }
         
@@ -41,16 +42,17 @@ public class RebellionBoxView extends View {
                 capitalPopularity = Double.parseDouble(CPV);
                 isBad = false;
             } catch (NumberFormatException nf) {
-                System.out.println("Error. Invaild popularity value");
+                ErrorView.display(this.getClass().getName(),
+                        "Error. Invaild popularity value");
             }
         }
         
         try {
             double result = PuzzleCalculation.openRebellionBox(capitalPopularity, rebellionPopularity);
-            System.out.println("Congratulations your values were valid.");
+            this.console.println("Congratulations your values were valid.");
             return true;
         } catch (PuzzleCalculationException pce) {
-            System.out.println(pce.getMessage());
+            ErrorView.display(this.getClass().getName(),pce.getMessage());
             this.displayMessage = "\nWhat is your rebellion popularity level: ";
             return false;
         }

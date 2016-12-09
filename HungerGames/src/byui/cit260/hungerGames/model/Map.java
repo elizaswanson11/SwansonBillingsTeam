@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.hungerGames.model;
+import hungergames.HungerGames;
 import java.io.Serializable;
 /**
  *
@@ -40,7 +41,7 @@ public class Map implements Serializable{
     
     public Map(int rowCount, int columnCount) {
         if (rowCount < 1 || columnCount < 1) {
-            System.out.println("The numbers of rows/columns must be greater than 0.");
+            HungerGames.getOutFile().println("The numbers of rows/columns must be greater than 0.");
             return;
         }
         

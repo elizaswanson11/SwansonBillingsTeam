@@ -13,19 +13,17 @@ import java.util.Scanner;
  *
  * @author eliza
  */
-public class StartProgramView {
-    
-    private String promptMessage;
+public class StartProgramView extends View{
     
     public StartProgramView() {
         
-        this.promptMessage = "\nPlease enter your name: ";
+        super("\nPlease enter your name: ");
         
         this.displayBanner();
     }
 
     public void displayBanner() {
-        System.out.println(
+        this.console.println(
         "\n****************************************************" +
         "\n*                                                  *" +
         "\n*                 The Hunger Games.                *" +
@@ -59,68 +57,8 @@ public class StartProgramView {
     END
     */
     
-    public void displayStartProgramView() {
-        /*
-        do
-            prompt for and get playersName
-            if playerName == 'Q' then
-                return
-            do requested action and display next view
-        while the view is not done
-        */
-        
-        boolean done = false; //set flag to not done
-        do {
-            String playersName = this.getPlayersName();
-            if (playersName.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(playersName);
-        } while (!done);
-    }
-
-    private String getPlayersName() {
-       /*
-    getInput(): value
-    BEGIN
-        WHILE a valid value has not been entered
-            DISPLAY promptMessage
-            GET the value entered from keyboard
-            Trim front and trailing blanks off of the name
-    
-            IF the length of the value is blank THEN
-                DISPLAY "Invalid value: The value cannot be blank"
-                CONTINUE
-            ENDIF
-        
-            BREAK
-        ENDWHILE
-        RETURN name
-    END
-    */
-    
-    Scanner keyboard = new Scanner(System.in);
-    String value = "";
-    boolean valid = false;
-    
-    while (!valid) {
-        System.out.println("\n" + this.promptMessage);
-        
-        value = keyboard.nextLine();
-        value = value.trim();
-        
-        if (value.length() < 1) {
-            System.out.println("\nInvalid value: value cannot be blank");
-            continue;
-        }
-        
-        break;
-    }
-    
-    return value;
-    }
-
-    private boolean doAction(String playersName) {
+    @Override
+    public boolean doAction(String playersName) {
         /*
         if the length of the playersName < 2 then
             display "Invalid name: The name msut be > 1 character
@@ -138,7 +76,7 @@ public class StartProgramView {
         */
         
         if (playersName.length() < 2) {
-            System.out.println("\nInvalid players name: "
+            ErrorView.display(this.getClass().getName(),"\nInvalid players name: "
                     + "The name must be greater than one character in length");
             return false;
         }
@@ -147,7 +85,7 @@ public class StartProgramView {
         Player player = GameControl.createPlayer(playersName);
         
         if (player == null) { //if unsuccessful
-            System.out.println("\nError creating the player.");
+            ErrorView.display(this.getClass().getName(),"\nError creating the player.");
             return false;
         }
         
@@ -159,7 +97,7 @@ public class StartProgramView {
 
     private void displayNextView(Player player) {
         // display a custom welcome message
-        System.out.println("\n============================================="
+        this.console.println("\n============================================="
                           + "\n Welcome to the game " + player.getName()
                           + "\n We hope you have a lot of fun!"
                           + "\n============================================="

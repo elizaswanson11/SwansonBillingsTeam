@@ -26,16 +26,18 @@ public class PracticeTrainingView extends View {
         try {
             Integer number = Integer.parseInt(value);
             PuzzleCalculation.compareTraining(number);
-            System.out.println("Congratulations you were successful in learning a new skill."
+            this.console.println("Congratulations you were successful in learning a new skill."
                     + "\n1 point has been added to your training level.");
-            System.out.println("It took you " + counter + " times to guess the right answer.");
+            this.console.println("It took you " + counter + " times to guess the right answer.");
             return true;
         } catch (PuzzleCalculationException pce) {
-            System.out.println(pce.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    pce.getMessage());
             counter++;
             return false;
         } catch (NumberFormatException nfe) {
-            System.out.println("Error. The value you entered was not a numeric number.");
+            ErrorView.display(this.getClass().getName(),
+                    "Error. The value you entered was not a numeric number.");
             counter++;
             return false;
         }

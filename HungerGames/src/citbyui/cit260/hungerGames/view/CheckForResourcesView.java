@@ -41,7 +41,8 @@ public class CheckForResourcesView extends View{
                 this.convertWaterResource();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try Again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid selection *** Try Again");
                 break;
         }
         
@@ -49,11 +50,11 @@ public class CheckForResourcesView extends View{
     }   
 
     private void convertWaterResource() {
-        System.out.println("** convertWaterResource function called");
+        this.console.println("** convertWaterResource function called");
     }
 
     private void convertFoodResource() {
-        System.out.println("** convertFoodResource function called");
+        this.console.println("** convertFoodResource function called");
     }
     
     

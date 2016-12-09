@@ -62,11 +62,11 @@ public class ResourceView extends View {
                     ResourceControl.findResource("Medicine");
                     break;
                 default:
-                    System.out.println("\n*** Invalid selection *** Try Again");
+                    ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try Again");
                     break;
             }
         } catch (ResourceControlException rce) {
-            System.out.println(rce.getMessage());
+            ErrorView.display(this.getClass().getName(),rce.getMessage());
             return false;
         }
 

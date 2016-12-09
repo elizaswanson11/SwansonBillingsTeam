@@ -33,7 +33,8 @@ public class CalcMaxResourceValueView extends View {
             case "N":
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try Again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid selection *** Try Again");
                 break;
         }
 
@@ -44,7 +45,8 @@ public class CalcMaxResourceValueView extends View {
         try {
             ResourceControl.calcMaxResourceValue();
         } catch (ResourceControlException rce) {
-            System.out.println(rce.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    rce.getMessage());
             return;
         }
         
@@ -55,6 +57,6 @@ public class CalcMaxResourceValueView extends View {
                 maxAmount = item.healthValue;
             }
         }
-        System.out.println("The max health value from a resource is " + maxAmount + ".");
+        this.console.println("The max health value from a resource is " + maxAmount + ".");
     }
 }

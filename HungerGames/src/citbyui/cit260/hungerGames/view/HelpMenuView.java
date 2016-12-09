@@ -42,7 +42,8 @@ public class HelpMenuView extends View{
                 this.viewResourceView();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try Again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid selection *** Try Again");
                 break;
         }
         
@@ -50,16 +51,16 @@ public class HelpMenuView extends View{
     }   
 
     private void viewAboutPopularity() {
-        System.out.println("\n*** viewAoutPopularity stub function called ***");
+        this.console.println("\n*** viewAoutPopularity stub function called ***");
 
     }
 
     private void viewGameObjectives() {
-        System.out.println("\n*** viewGameObjectives stub function called ***");
+        this.console.println("\n*** viewGameObjectives stub function called ***");
     }
 
     private void viewMoveCharacter() {
-        System.out.println(
+        this.console.println(
                   "\n******************************************************************"
                 + "\nMoving [How to move character]: To move your character, you will "
                 + "\nneed to choose the map. You will receive a message of “Where do you want to "

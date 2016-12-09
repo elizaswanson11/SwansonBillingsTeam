@@ -24,12 +24,14 @@ public class DummyView extends View {
         try {
             resourceValue = Integer.parseInt(value);
             ResourceControl.dummyControl(resourceValue);
-            System.out.println("Congrats! Your number is equal to ten.");
+            this.console.println("Congrats! Your number is equal to ten.");
         } catch (ResourceControlException rce) {
-            System.out.println(rce.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    rce.getMessage());
             return false;
         } catch (NumberFormatException nfe) {
-            System.out.println("You must enter a valid number. Try again.");
+            ErrorView.display(this.getClass().getName(),
+                    "You must enter a valid number. Try again.");
             return false;
         }
 

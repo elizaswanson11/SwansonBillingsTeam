@@ -9,6 +9,7 @@ import byui.cit260.hungerGames.model.Location;
 import byui.cit260.hungerGames.model.Map;
 import byui.cit260.hungerGames.model.Scene;
 import byui.cit260.hungerGames.model.Scene.SceneType;
+import hungergames.HungerGames;
 
 /**
  *
@@ -27,7 +28,7 @@ public class MapControl {
     }
 
     static void moveCharactersToStartPosition(Map map) {
-       System.out.println("*** moveCharactersToStartPosition() called ***");
+       HungerGames.getOutFile().println("*** moveCharactersToStartPosition() called ***");
     }
     
     public static void assignScenesToLocations(Map map, Scene[] scenes) {
