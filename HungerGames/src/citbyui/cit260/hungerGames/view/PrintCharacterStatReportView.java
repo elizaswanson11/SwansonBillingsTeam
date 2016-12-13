@@ -5,6 +5,9 @@
  */
 package citbyui.cit260.hungerGames.view;
 
+import byui.cit260.hungerGames.model.MainCharacter;
+import hungergames.HungerGames;
+
 /**
  *
  * @author eliza
@@ -17,6 +20,7 @@ public class PrintCharacterStatReportView extends View {
 
     @Override
     public boolean doAction(String value) {
+        HungerGames.getOutFile().println("*** PrintCharacterStatReportView stub function called ***");
         return true;
     }
     

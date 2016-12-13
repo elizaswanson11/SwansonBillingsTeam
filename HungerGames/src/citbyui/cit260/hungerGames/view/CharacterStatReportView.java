@@ -13,19 +13,19 @@ import java.io.IOException;
  */
 public class CharacterStatReportView extends View{
 
-    public CharacterStatReportView() {
-        super("\n\nEnter the file path for the file where the report "
-            + "is to be saved.");
-    }
+    //public CharacterStatReportView() {
+        //super("\n\nEnter the file path for the file where the report "
+            //+ "is to be saved.");
+   // }
 
     @Override
     public boolean doAction(String value) {
-//        try {
-//            PrintCharacterStatReportView print = new PrintCharacterStatReportView();
-//            print.display();
+ //       try {
+            PrintCharacterStatReportView print = new PrintCharacterStatReportView();
+           print.display();
 //        } catch (IOException ioe) {
 //            ErrorView.display(this.getClass().getName(),
-//            ioe.getMessage());
+ //           ioe.getMessage());
 //        }
     return true;
     }
