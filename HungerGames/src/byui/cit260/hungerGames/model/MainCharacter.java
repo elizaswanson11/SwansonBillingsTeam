@@ -4,18 +4,22 @@
  * and open the template in the editor.
  */
 package byui.cit260.hungerGames.model;
+
 import java.io.Serializable;
+
 /**
  *
  * @author elizaswanson
  */
 public class MainCharacter extends Character implements Serializable {
+
     private double rebelPopularity;
     private double capitolPopularity;
     private double healthLevel;
     private double maxRebelPopularity;
     private double maxCapitolPopularity;
     private double maxHealthLevel;
+    private String mainCharacterName;
 
     public MainCharacter() {
     }
@@ -64,8 +68,7 @@ public class MainCharacter extends Character implements Serializable {
         }
         return true;
     }
-    
-    
+
     public double getRebelPopularity() {
         return rebelPopularity;
     }
@@ -113,10 +116,18 @@ public class MainCharacter extends Character implements Serializable {
     public void setMaxHealthLevel(double maxHealthLevel) {
         this.maxHealthLevel = maxHealthLevel;
     }
-    
-     @Override
+
+    public String getMainCharacterName() {
+        return mainCharacterName;
+    }
+
+    public void setMainCharacterName(String mainCharacterName) {
+        this.mainCharacterName = mainCharacterName;
+    }
+
+    @Override
     public String toString() {
         return "MainCharacter{" + "rebelPopularity=" + rebelPopularity + ", capitolPopularity=" + capitolPopularity + ", healthLevel=" + healthLevel + ", maxRebelPopularity=" + maxRebelPopularity + ", maxCapitolPopularity=" + maxCapitolPopularity + ", maxHealthLevel=" + maxHealthLevel + '}';
     }
-    
+
 }

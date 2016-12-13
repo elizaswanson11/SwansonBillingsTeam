@@ -9,6 +9,7 @@ import byui.cit260.hungerGames.model.Game;
 import byui.cit260.hungerGames.model.Map;
 import byui.cit260.hungerGames.model.Player;
 import byui.cit260.hungerGames.model.Character;
+import byui.cit260.hungerGames.model.MainCharacter;
 import byui.cit260.hungerGames.model.Scene;
 import citbyui.cit260.hungerGames.exceptions.GameControlException;
 import hungergames.HungerGames;
@@ -45,6 +46,9 @@ public class GameControl {
         
         Character[] characters = GameControl.createCharacter();
         game.setCharacters(characters);
+        
+        MainCharacter mainCharacter = new MainCharacter();
+        game.setMainCharacter(mainCharacter);
         
         Map map = MapControl.createMap();
         game.setMap(map);

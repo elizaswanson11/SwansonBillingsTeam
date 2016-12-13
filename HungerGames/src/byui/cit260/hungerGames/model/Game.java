@@ -4,19 +4,31 @@
  * and open the template in the editor.
  */
 package byui.cit260.hungerGames.model;
+
 import java.io.Serializable;
+
 /**
  *
  * @author elizaswanson
  */
-public class Game implements Serializable{
+public class Game implements Serializable {
+
     private double numberPeople;
-    private double numberOfTributes; 
-    
+    private double numberOfTributes;
+
     private Player player;
+    private MainCharacter mainCharacter;
+
+    public MainCharacter getMainCharacter() {
+        return mainCharacter;
+    }
+
+    public void setMainCharacter(MainCharacter mainCharacter) {
+        this.mainCharacter = mainCharacter;
+    }
     private Character[] characters;
     private Map map;
-    
+
     public Character[] getCharacters() {
         return characters;
     }

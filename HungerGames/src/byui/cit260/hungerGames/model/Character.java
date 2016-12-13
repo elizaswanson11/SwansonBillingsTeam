@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.hungerGames.model;
+
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -11,12 +12,13 @@ import java.util.Objects;
  *
  * @author eliza
  */
-public class Character implements Serializable{
+public class Character implements Serializable {
+
     private String name;
-    private double coordinantes;
+    private double coordinates;
     private double skillLevel;
 
-    private Bag bag;    
+    private Bag bag;
 
     public Bag getBag() {
         return bag;
@@ -25,7 +27,7 @@ public class Character implements Serializable{
     public void setBag(Bag bag) {
         this.bag = bag;
     }
-    
+
     public Character() {
     }
 
@@ -37,12 +39,12 @@ public class Character implements Serializable{
         this.name = name;
     }
 
-    public double getCoordinantes() {
-        return coordinantes;
+    public double getCoordinates() {
+        return coordinates;
     }
 
-    public void setCoordinantes(double coordinantes) {
-        this.coordinantes = coordinantes;
+    public void setCoordinates(double coordinates) {
+        this.coordinates = coordinates;
     }
 
     public double getSkillLevel() {
@@ -57,7 +59,7 @@ public class Character implements Serializable{
     public int hashCode() {
         int hash = 5;
         hash = 67 * hash + Objects.hashCode(this.name);
-        hash = 67 * hash + (int) (Double.doubleToLongBits(this.coordinantes) ^ (Double.doubleToLongBits(this.coordinantes) >>> 32));
+        hash = 67 * hash + (int) (Double.doubleToLongBits(this.coordinates) ^ (Double.doubleToLongBits(this.coordinates) >>> 32));
         hash = 67 * hash + (int) (Double.doubleToLongBits(this.skillLevel) ^ (Double.doubleToLongBits(this.skillLevel) >>> 32));
         return hash;
     }
@@ -74,7 +76,7 @@ public class Character implements Serializable{
             return false;
         }
         final Character other = (Character) obj;
-        if (Double.doubleToLongBits(this.coordinantes) != Double.doubleToLongBits(other.coordinantes)) {
+        if (Double.doubleToLongBits(this.coordinates) != Double.doubleToLongBits(other.coordinates)) {
             return false;
         }
         if (Double.doubleToLongBits(this.skillLevel) != Double.doubleToLongBits(other.skillLevel)) {
@@ -88,8 +90,7 @@ public class Character implements Serializable{
 
     @Override
     public String toString() {
-        return "Character{" + "name=" + name + ", coordinantes=" + coordinantes + ", skillLevel=" + skillLevel + '}';
+        return "Character{" + "name=" + name + ", coordinantes=" + coordinates + ", skillLevel=" + skillLevel + '}';
     }
-    
-    
+
 }
