@@ -27,6 +27,7 @@ public class GameMenuView extends View{
               + "\nM - Display Map"
               + "\nC - Character Statistics"
               + "\nA - Actions"
+              + "\nV - Print Resource Report"
               + "\nO - Open Rebellion Box"
               + "\nR - Calculate Max Resource Value"
               + "\nQ - Quit"
@@ -43,6 +44,9 @@ public class GameMenuView extends View{
                 break;
             case "C":
                 this.displayCharacterStatistics();
+                break;
+            case "V":
+                this.displayResourceReport();
                 break;
             case "A":
                 this.displayActionsMenu();
@@ -108,7 +112,8 @@ this.console.println("-----------------------------------------------------");
                 
 
     private void displayCharacterStatistics() {
-        this.console.println("*** The displayCharacterStatistics() was called ***");
+        CharacterStatReportView characterStatReportView = new CharacterStatReportView();
+        characterStatReportView.display();
     }
 
     private void displayActionsMenu() {
@@ -124,5 +129,10 @@ this.console.println("-----------------------------------------------------");
     private void calcMaxResource() {
         CalcMaxResourceValueView calcMaxResourceValueView = new CalcMaxResourceValueView();
         calcMaxResourceValueView.display();
+    }
+
+    private void displayResourceReport() {
+        ResourceReportView resourceReportView = new ResourceReportView();
+        resourceReportView.display();
     }
 }

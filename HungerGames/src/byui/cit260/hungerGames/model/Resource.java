@@ -35,7 +35,7 @@ public enum Resource implements Serializable{
         return description;
     }
 
-    public double getHealthValue() {
+    public int getHealthValue() {
         return healthValue;
     }
 

@@ -7,6 +7,9 @@ package byui.cit260.hungerGames.control;
 
 import byui.cit260.hungerGames.model.Resource;
 import citbyui.cit260.hungerGames.exceptions.ResourceControlException;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  *
@@ -14,7 +17,7 @@ import citbyui.cit260.hungerGames.exceptions.ResourceControlException;
  */
 public class ResourceControl {
 
-    public double calcResourceReward(double capitolPopularity)
+    public static double calcResourceReward(double capitolPopularity)
             throws ResourceControlException {
 
         //calcResourceReward(capitolPopularity) {
@@ -71,6 +74,28 @@ public class ResourceControl {
                 throw new ResourceControlException("Cannot complete function. Health Value is less than 0.");
             }
         }
+    }
+
+    public static void printResourceReport(String outputLocation)
+            throws FileNotFoundException, IOException {
+        
+        Resource[] resources = Resource.values();
+        
+        try (PrintWriter out = new PrintWriter(outputLocation)) {
+            out.println("\n\n              Resource Report              ");
+            out.printf("%n%-8s%6s%-100s", "Name", "Value", " Description");
+            out.printf("%n%-8s%6s%-100s", "----", "-----", " -----------");
+            
+            for (Resource resource : resources) {
+               out.printf("%n%-8s%6d%-100s",
+                        resource.name(),
+                        resource.getHealthValue(),
+                        " " + resource.getDescription());
+            }
+        }
+    }
+
+    public ResourceControl() {
     }
 
 }
