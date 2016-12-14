@@ -10,34 +10,34 @@ import hungergames.HungerGames;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author eliza
  */
-public class GameMenuView extends View{
+public class GameMenuView extends View {
 
     private String menu;
 
     public GameMenuView() {
         super("\n"
-              + "\n--------------------------------"
-              + "\n| Game Menu                    |"
-              + "\n--------------------------------"
-              + "\nM - Display Map"
-              + "\nC - Character Statistics"
-              + "\nA - Actions"
-              + "\nV - Print Resource Report"
-              + "\nO - Open Rebellion Box"
-              + "\nR - Calculate Max Resource Value"
-              + "\nQ - Quit"
-              + "\n--------------------------------");
+                + "\n--------------------------------"
+                + "\n| Game Menu                    |"
+                + "\n--------------------------------"
+                + "\nM - Display Map"
+                + "\nC - Character Statistics"
+                + "\nA - Actions"
+                + "\nV - Print Resource Report"
+                + "\nL - Print Locations Report"
+                + "\nO - Open Rebellion Box"
+                + "\nR - Calculate Max Resource Value"
+                + "\nQ - Quit"
+                + "\n--------------------------------");
     }
 
     @Override
     public boolean doAction(String value) {
         value = value.toUpperCase();
-        
+
         switch (value) {
             case "M":
                 this.displayMap();
@@ -47,6 +47,9 @@ public class GameMenuView extends View{
                 break;
             case "V":
                 this.displayResourceReport();
+                break;
+            case "L":
+                this.displayLocationsReport();
                 break;
             case "A":
                 this.displayActionsMenu();
@@ -80,36 +83,28 @@ public class GameMenuView extends View{
         for (int i = 0; i <= Map.rowCount; i++) {
             // PRINT a row divider
             this.console.println("-----------------------------------------------------");
-        // PRINT the row number on a new line
-            this.console.printf((i) + " "); 
-        // FOR every column in row
+            // PRINT the row number on a new line
+            this.console.printf((i) + " ");
+            // FOR every column in row
             for (int w = 0; w <= Map.columnCount; w++) {
-        // PRINT a column divider
+                // PRINT a column divider
                 this.console.printf("|" + " ?? ");
-        //location = locations[row][column]
-        //location = locations[Map.rowCount][Map.columnCount];
-        // IF location has been visited
-        // PRINT the mapSymbol in the scene in this location
-        // ELSE
-        // DISPLAY " ?? "
-            // ENDIF
+                //location = locations[row][column]
+                //location = locations[Map.rowCount][Map.columnCount];
+                // IF location has been visited
+                // PRINT the mapSymbol in the scene in this location
+                // ELSE
+                // DISPLAY " ?? "
+                // ENDIF
             }
-        // PRINT the ending column divider
-        this.console.println("|  ");
-        // ENDFOR
+            // PRINT the ending column divider
+            this.console.println("|  ");
+            // ENDFOR
         }
 // PRINT ending row divider
-this.console.println("-----------------------------------------------------");
+        this.console.println("-----------------------------------------------------");
 //END
-}      
-       
-        
-        
-            
-           
-            
-                
-                
+    }
 
     private void displayCharacterStatistics() {
         CharacterStatReportView characterStatReportView = new CharacterStatReportView();
@@ -120,12 +115,12 @@ this.console.println("-----------------------------------------------------");
         ActionMenuView actionMenuView = new ActionMenuView();
         actionMenuView.display();
     }
-    
+
     private void doOpenRebellionBox() {
         RebellionBoxView rebellionBoxView = new RebellionBoxView();
         rebellionBoxView.display();
     }
-    
+
     private void calcMaxResource() {
         CalcMaxResourceValueView calcMaxResourceValueView = new CalcMaxResourceValueView();
         calcMaxResourceValueView.display();
@@ -134,5 +129,10 @@ this.console.println("-----------------------------------------------------");
     private void displayResourceReport() {
         ResourceReportView resourceReportView = new ResourceReportView();
         resourceReportView.display();
+    }
+
+    private void displayLocationsReport() {
+        LocationsReportView locationsReportView = new LocationsReportView();
+        locationsReportView.display();
     }
 }
