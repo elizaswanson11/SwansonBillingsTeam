@@ -6,6 +6,7 @@
 package citbyui.cit260.hungerGames.view;
 
 import byui.cit260.hungerGames.control.PuzzleCalculation;
+import byui.cit260.hungerGames.model.MainCharacter;
 import citbyui.cit260.hungerGames.exceptions.PuzzleCalculationException;
 
 /**
@@ -29,9 +30,9 @@ public class RebellionBoxView extends View {
                     "Error. Invaild popularity value");
             return false;
         }
-        
+
         double capitalPopularity = 0;
-        
+
         boolean isBad = true;
         while (isBad) {
             this.displayMessage = "\nWhat is your capital popularity level: ";
@@ -46,13 +47,13 @@ public class RebellionBoxView extends View {
                         "Error. Invaild popularity value");
             }
         }
-        
+
         try {
             double result = PuzzleCalculation.openRebellionBox(capitalPopularity, rebellionPopularity);
             this.console.println("Congratulations your values were valid.");
             return true;
         } catch (PuzzleCalculationException pce) {
-            ErrorView.display(this.getClass().getName(),pce.getMessage());
+            ErrorView.display(this.getClass().getName(), pce.getMessage());
             this.displayMessage = "\nWhat is your rebellion popularity level: ";
             return false;
         }
