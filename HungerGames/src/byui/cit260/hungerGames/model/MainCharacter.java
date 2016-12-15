@@ -127,7 +127,7 @@ public class MainCharacter extends Character implements Serializable {
     }
     
     public CharStats[] getCharStats() {
-        CharStats[] charStat = new CharStats[CharStats.values().length];
+        CharStats[] charStat = new CharStats[CharStats().length];
     }
 
     @Override

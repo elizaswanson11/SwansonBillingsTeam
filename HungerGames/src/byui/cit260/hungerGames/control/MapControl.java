@@ -156,7 +156,7 @@ public class MapControl {
 
             for (Location[] row : locations) {
                 for (Location location : row) {
-                    out.printf("%n%-12s%12d%-12s",
+                    out.printf("%n%-12s%12%-12s",
                             location.getRow(),
                             location.getColumn(),
                             " " + location.getScene().getDescription());
