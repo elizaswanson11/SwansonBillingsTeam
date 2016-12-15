@@ -93,9 +93,28 @@ public class PuzzleCalculation {
         if (number < 0 || number > 9) {
             throw new PuzzleCalculationException("Invalid Entry: Please input a number between 0 and 9.");
         } else if (number != numberTwo) {
-            throw new PuzzleCalculationException("I'm sorry, your number was not correct." +
-                               "\nPlease enter a new number and try again.");
+            throw new PuzzleCalculationException("I'm sorry, your number was not correct."
+                    + "\nPlease enter a new number and try again.");
         }
+    }
+
+    public static int calcRebelNoteReward()
+            throws PuzzleCalculationException {
+        Random random = new Random();
+        int rebelNoteAward;
+        int pointsWin = 0;
+        try {
+            rebelNoteAward = random.nextInt(99) + 1;
+        } catch (NumberFormatException nf) {
+            throw new PuzzleCalculationException("The calclulation could not be completed, as the input was invalid");
+        }
+
+        if (rebelNoteAward <= 50) {
+            rebelNoteAward = random.nextInt(9) + 1;
+        } else {
+            rebelNoteAward = random.nextInt(3) + 1;
+        }
+        return rebelNoteAward;
     }
 
 }
