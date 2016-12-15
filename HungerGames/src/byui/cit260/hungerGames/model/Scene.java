@@ -11,15 +11,18 @@ import java.util.Objects;
  * @author eliza
  */
 public class Scene implements Serializable{
-    private String description;
-    private double travelHealth;
-    private String displaySymbol;
+
     public enum SceneType {
         fight,
         resource,
         interview;
     }
-    
+    private String description;
+    private double travelHealth;
+    private String displaySymbol;
+    Scene (String description) {
+        this.description = description;
+    }
     public Scene() {
     }
     

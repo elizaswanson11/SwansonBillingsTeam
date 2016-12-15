@@ -94,11 +94,6 @@ public class ResourceControl {
             }
         }
     }
-
-    public static void printLocationsReport(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     public ResourceControl() {
     }
 

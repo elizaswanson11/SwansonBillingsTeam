@@ -5,6 +5,7 @@
  */
 package byui.cit260.hungerGames.control;
 
+import byui.cit260.hungerGames.model.Game;
 import byui.cit260.hungerGames.model.Location;
 import byui.cit260.hungerGames.model.Map;
 import byui.cit260.hungerGames.model.Scene;
@@ -144,20 +145,24 @@ public class MapControl {
     public static void printLocationsReport(String outputLocation)
             throws FileNotFoundException, IOException {
 
-       
+       Game game = HungerGames.getCurrentGame();
+       Map map = game.getMap();
+       Location[][] locations = map.getLocations();
         
         try (PrintWriter out = new PrintWriter(outputLocation)) {
             out.println("\n\n              Locations Report              ");
             out.printf("%n%-12s%12s%-12s", "X Position", "Y Position", "Scene Type");
             out.printf("%n%-12s%12s%-12s", "----------", "----------", "----------");
 
-            for (Map.columnCount locations : locations) {
-                for (Map.rowCount locations : locations) {
-                    out.printf("%n%-12s%12d%-12s",
-                            locations.getRowCount(),
-                            locations.getColumnCount(),
-                            " " + locations.getScene());
+            for (Location[] row : locations) {
+                for (Location location : row) {
+                     out.printf("%n%-12s%12s%-12s",
+                            location.getRow(),
+                            location.getColumn(),
+                            " " + location.getScene());
                 }
-            }
+            } 
+            
         }
-    }
+        }
+}
