@@ -94,7 +94,5 @@ public class ResourceControl {
             }
         }
     }
-    public ResourceControl() {
-    }
 
 }

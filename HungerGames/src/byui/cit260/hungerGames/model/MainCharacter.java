@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @author elizaswanson
  */
 public class MainCharacter extends Character implements Serializable {
-
+    
     private double rebelPopularity;
     private double capitolPopularity;
     private double healthLevel;
@@ -20,6 +20,7 @@ public class MainCharacter extends Character implements Serializable {
     private double maxCapitolPopularity;
     private double maxHealthLevel;
     private String mainCharacterName;
+    
 
     public MainCharacter() {
     }
@@ -124,6 +125,10 @@ public class MainCharacter extends Character implements Serializable {
     public void setMainCharacterName(String mainCharacterName) {
         this.mainCharacterName = mainCharacterName;
     }
+    
+//    public CharStats[] getCharStats() {
+//        CharStats[] charStat = new CharStats[CharStats().length];
+//    }
 
     @Override
     public String toString() {

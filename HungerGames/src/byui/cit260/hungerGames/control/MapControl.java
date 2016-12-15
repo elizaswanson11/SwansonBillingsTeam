@@ -145,10 +145,10 @@ public class MapControl {
     public static void printLocationsReport(String outputLocation)
             throws FileNotFoundException, IOException {
 
-       Game game = HungerGames.getCurrentGame();
-       Map map = game.getMap();
-       Location[][] locations = map.getLocations();
-        
+        Game game = HungerGames.getCurrentGame();
+        Map map = game.getMap();
+        Location[][] locations = map.getLocations();
+
         try (PrintWriter out = new PrintWriter(outputLocation)) {
             out.println("\n\n              Locations Report              ");
             out.printf("%n%-12s%12s%-12s", "X Position", "Y Position", "Scene Type");
@@ -164,5 +164,6 @@ public class MapControl {
             } 
             
         }
-        }
+    }
 }
+

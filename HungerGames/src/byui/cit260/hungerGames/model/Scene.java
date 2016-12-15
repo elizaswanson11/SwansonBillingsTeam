@@ -4,13 +4,15 @@
  * and open the template in the editor.
  */
 package byui.cit260.hungerGames.model;
+
 import java.io.Serializable;
 import java.util.Objects;
+
 /**
  *
  * @author eliza
  */
-public class Scene implements Serializable{
+public class Scene implements Serializable {
 
     public enum SceneType {
         fight,
@@ -20,12 +22,14 @@ public class Scene implements Serializable{
     private String description;
     private double travelHealth;
     private String displaySymbol;
-    Scene (String description) {
+
+    Scene(String description) {
         this.description = description;
     }
+
     public Scene() {
     }
-    
+
     public String getDescription() {
         return description;
     }
@@ -87,6 +91,5 @@ public class Scene implements Serializable{
     public String toString() {
         return "Scene{" + "description=" + description + ", travelHealth=" + travelHealth + ", displaySymbol=" + displaySymbol + '}';
     }
-    
-    
+
 }
