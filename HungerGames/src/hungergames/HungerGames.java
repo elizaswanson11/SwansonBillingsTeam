@@ -8,7 +8,7 @@ package hungergames;
 import byui.cit260.hungerGames.model.Game;
 import byui.cit260.hungerGames.model.Player;
 import citbyui.cit260.hungerGames.view.ErrorView;
-import citbyui.cit260.hungerGames.view.StartProgramView;
+import citbyui.cit260.hungerGames.view.WelcomeMessageBeforeGameView;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -41,8 +41,8 @@ public class HungerGames {
             String filePath = "log.txt";
             HungerGames.logFile = new PrintWriter(filePath);
             
-            StartProgramView startProgramView = new StartProgramView();
-            startProgramView.display();
+            WelcomeMessageBeforeGameView welcomeMessageBeforeGameView = new WelcomeMessageBeforeGameView();
+            welcomeMessageBeforeGameView.display();
 
             
         } catch (Exception e) {

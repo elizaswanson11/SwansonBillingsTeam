@@ -5,6 +5,9 @@
  */
 package citbyui.cit260.hungerGames.view;
 
+import byui.cit260.hungerGames.control.PuzzleCalculation;
+import citbyui.cit260.hungerGames.exceptions.PuzzleCalculationException;
+
 /**
  *
  * @author eliza
@@ -46,15 +49,42 @@ public class InterviewView extends View {
     }
 
     private void choiceOne() {
-        this.console.println("\nThe Captial is please with you.");
 
+        int popReward = 0;
+        try {
+            popReward = PuzzleCalculation.calcAdditionToPopularity();
+        } catch (PuzzleCalculationException pce) {
+            ErrorView.display(this.getClass().getName(),
+                    pce.getMessage());
+        }
+        this.console.println("\nThe Captial is please with you."
+                + "\nYou have been awarded " + popReward + " to your Capital Popularity.");
+
+        NoteFromRebelsView noteFromRebelsView = new NoteFromRebelsView();
+        noteFromRebelsView.display();
     }
 
     private void choiceTwo() {
-        this.console.println("\nYou have not angered either party.");
+        this.console.println("\nGreat! You have not angered either party."
+            +"\nBut you also have not increased any of your Popularity levels.");
+        
+        NoteFromRebelsView noteFromRebelsView = new NoteFromRebelsView();
+        noteFromRebelsView.display();
     }
 
     private void chioceThree() {
-        this.console.println("\nThe Rebels are pleased your on their side."); //To change body of generated methods, choose Tools | Templates.
+        int popReward = 0;
+        try {
+            popReward = PuzzleCalculation.calcAdditionToPopularity();
+        } catch (PuzzleCalculationException pce) {
+            ErrorView.display(this.getClass().getName(),
+                    pce.getMessage());
+        }
+
+        this.console.println("\nThe Rebels are pleased your on their side."
+                + "\nYou have been awarded " + popReward + " to your Rebllion Popularity.");
+
+        NoteFromRebelsView noteFromRebelsView = new NoteFromRebelsView();
+        noteFromRebelsView.display();
     }
 }

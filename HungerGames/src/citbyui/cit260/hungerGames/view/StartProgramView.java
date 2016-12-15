@@ -97,8 +97,6 @@ public class StartProgramView extends View{
 
     private void displayNextView(Player player) {
         // display a custom welcome message
-        NoteFromRebelsView noteFromRebelsView = new NoteFromRebelsView();
-        noteFromRebelsView.display();
         this.console.println("\n============================================="
                           + "\n Welcome to the game " + player.getName()
                           + "\n We hope you have a lot of fun!"

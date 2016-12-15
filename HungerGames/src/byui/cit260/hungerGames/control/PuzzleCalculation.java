@@ -116,5 +116,19 @@ public class PuzzleCalculation {
         }
         return rebelNoteAward;
     }
+    
+    public static int calcAdditionToPopularity()
+            throws PuzzleCalculationException {
+        Random random = new Random();
+        int additionalPop;
+        
+        try {
+            additionalPop = random.nextInt(5) + 1;
+        } catch (NumberFormatException nf) {
+            throw new PuzzleCalculationException("The calclulation could not be completed, as the input was invalid");
+        }
+        
+        return additionalPop;
+    }
 
 }

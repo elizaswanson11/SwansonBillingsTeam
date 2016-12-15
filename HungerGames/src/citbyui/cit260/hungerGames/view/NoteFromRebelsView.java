@@ -54,7 +54,10 @@ public class NoteFromRebelsView extends View {
                     "Invalid value. Please enter a valid value.");
             return false;
         }
-
+        
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.display();
+        
         return true;
     }
 
