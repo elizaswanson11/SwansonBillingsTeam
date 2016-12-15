@@ -51,12 +51,26 @@ public class HelpMenuView extends View{
     }   
 
     private void viewAboutPopularity() {
-        this.console.println("\n*** viewAoutPopularity stub function called ***");
-
+        this.console.println(
+                  "\n******************************************************************"
+                + "\nAbout Popularity: In the games, you are not in control of your surroundings."
+                + "\nThe Capitol controls your situations. Their enemy, the Rebels, are trying to"
+                + "\nfight them. Based on your actions throughout the game, you can lose or gain"
+                + "\npopularity with either of the groups. This will be important later on, because"
+                + "\neach will have its own benefits as you go throughout the game."
+                + "\n******************************************************************");
     }
 
     private void viewGameObjectives() {
-        this.console.println("\n*** viewGameObjectives stub function called ***");
+        this.console.println(
+                  "\n******************************************************************"
+                + "\nGame Objectives: The objective of the game is to be the last man standing."
+                + "\nThere are other tributes in the game, but you need to outlast them."
+                + "\nYou can do this by gathering resources and keeping your health points up."
+                + "\nWhen you move to new locations, you may have to challenge an opponent."
+                + "\nThis could lower your health points, but it could also increase your chance"
+                + "\nof winning. If all other tributes are gone, you have won the game."
+                + "\n******************************************************************");
     }
 
     private void viewMoveCharacter() {
