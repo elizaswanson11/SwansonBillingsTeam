@@ -126,9 +126,9 @@ public class MainCharacter extends Character implements Serializable {
         this.mainCharacterName = mainCharacterName;
     }
     
-    public CharStats[] getCharStats() {
-        CharStats[] charStat = new CharStats[CharStats().length];
-    }
+//    public CharStats[] getCharStats() {
+//        CharStats[] charStat = new CharStats[CharStats().length];
+//    }
 
     @Override
     public String toString() {

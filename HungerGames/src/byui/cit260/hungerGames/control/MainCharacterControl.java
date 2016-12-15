@@ -32,21 +32,21 @@ public class MainCharacterControl {
         mainCharacter.setMaxHealthLevel(20);
     }
 
-    public static void printCharacterReport(String outputLocation)
-            throws FileNotFoundException, IOException {
-
-        
-        try (PrintWriter out = new PrintWriter(outputLocation)) {
-            out.println("\n\n              Character Stats Report              ");
-            out.printf("%n%-8s%15s%-12s", "Type", "Current Value", "Max Value");
-            out.printf("%n%-8s%15s%-12s", "----", "-----", " -----------");
-
-            out.printf("%n%-8s%15d%-12s",
-                    MainCharacter.name(),
-                    resource.getHealthValue(),
-                    " " + resource.getDescription());
-        }
-    }
+//    public static void printCharacterReport(String outputLocation)
+//            throws FileNotFoundException, IOException {
+//
+//        
+//        try (PrintWriter out = new PrintWriter(outputLocation)) {
+//            out.println("\n\n              Character Stats Report              ");
+//            out.printf("%n%-8s%15s%-12s", "Type", "Current Value", "Max Value");
+//            out.printf("%n%-8s%15s%-12s", "----", "-----", " -----------");
+//
+//            out.printf("%n%-8s%15d%-12s",
+//                    MainCharacter.name(),
+//                    resource.getHealthValue(),
+//                    " " + resource.getDescription());
+//        }
+//    }
 
 //    public ArrayList<Stats> addCharacterValue() {
 //
